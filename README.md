@@ -1,6 +1,8 @@
 # Presupuestos de España Explicados
 
-Dashboard interactivo que explica los Presupuestos Generales del Estado (PGE) de España de forma visual y accesible.
+Panel interactivo que explica los Presupuestos Generales del Estado (PGE) de España de forma visual y accesible.
+
+**[Ver el panel](https://jcordovilla.github.io/presupuestos-espana/)**
 
 ## Por qué
 
