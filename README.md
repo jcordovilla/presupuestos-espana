@@ -10,7 +10,7 @@ En 2021 publiqué [La odisea de entender los PGE](https://www.linkedin.com/pulse
 
 Cinco años después, la situación no ha mejorado. Los PGE siguen siendo documentos contables pensados para justificar el aparato administrativo, no para informar al ciudadano. La transparencia presupuestaria en España es nominal: los datos existen, pero están dispersos en decenas de hojas Excel con clasificaciones crípticas, años prorrogados sin señalar, y cifras que no se pueden comparar sin entender la estructura institucional que hay detrás.
 
-Este dashboard es un intento de hacer lo que el Estado debería hacer: presentar los presupuestos de forma que cualquiera pueda entenderlos.
+Este panel es un intento de hacer lo que el Estado debería hacer: presentar los presupuestos de forma que cualquiera pueda entenderlos.
 
 ## Qué es
 
@@ -58,7 +58,7 @@ Abrir `index.html` en cualquier navegador. No requiere servidor ni instalación.
 
 ## Aviso
 
-Este dashboard tiene un propósito estrictamente informativo. No es un documento oficial ni pretende sustituir a las fuentes primarias.
+Este panel tiene un propósito estrictamente informativo. No es un documento oficial ni pretende sustituir a las fuentes primarias.
 
 Los datos proceden de fuentes públicas y han sido procesados con la ayuda de herramientas de inteligencia artificial. Tanto la IA como el autor pueden cometer errores de interpretación, transcripción o cálculo. Si detectas alguno, agradezco que lo reportes abriendo un [issue](https://github.com/jcordovilla/presupuestos-espana/issues).
 
