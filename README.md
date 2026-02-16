@@ -54,6 +54,14 @@ Abrir `index.html` en cualquier navegador. No requiere servidor ni instalación.
 
 - [Informe de Presupuestos Iniciales 2025 — AIReF](https://www.airef.es/wp-content/uploads/2025/04/Informes_presupuestos_iniciales/Informe-Presupuestos-Iniciales-2025.pdf)
 
+## Aviso
+
+Este dashboard tiene un propósito estrictamente informativo. No es un documento oficial ni pretende sustituir a las fuentes primarias.
+
+Los datos proceden de fuentes públicas y han sido procesados con la ayuda de herramientas de inteligencia artificial. Tanto la IA como el autor pueden cometer errores de interpretación, transcripción o cálculo. Si detectas alguno, agradezco que lo reportes abriendo un [issue](https://github.com/jcordovilla/presupuestos-espana/issues).
+
+Dicho esto: que un ejercicio ciudadano de divulgación pueda contener alguna imprecisión no exime a las administraciones públicas de su obligación de informar con claridad sobre cómo gestionan los recursos de todos. Ese servicio, a día de hoy, sigue sin prestarse.
+
 ## Licencia
 
 Datos de dominio público (Gobierno de España). Código y visualización: MIT.
