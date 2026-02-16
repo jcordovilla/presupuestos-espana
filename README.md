@@ -60,4 +60,4 @@ Datos de dominio público (Gobierno de España). Código y visualización: MIT.
 
 ---
 
-**Autor:** [Jose Cordovilla](https://www.linkedin.com/in/josecordovilla/) · Consultor de infraestructuras y gestión pública, con la ayuda de [Claude](https://claude.ai) (Anthropic).
+**Autor:** [Jose Cordovilla](https://www.linkedin.com/in/josecordovilla/) · Director de Consultoría Estratégica en [TYPSA](https://www.typsa.com). Experto en infraestructuras y gestión pública. Hecho con la ayuda de mis agentes de IA, principalmente de [Claude](https://claude.ai) (Anthropic).
