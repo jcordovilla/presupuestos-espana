@@ -163,6 +163,7 @@
         <h1>Los Presupuestos de España, explicados</h1>
         <p>Una guia visual para entender de donde viene y a donde va el dinero publico</p>
         <div class="flag">Datos: PGE 2023 (prorrogados a 2024 y 2025) + informacion complementaria | Fuente: Ministerio de Hacienda - SEPG</div>
+        <div style="margin-top: 10px; font-size: 13px; opacity: 0.7;">Jose Cordovilla · Director de Consultoría Estratégica en TYPSA</div>
     </div>
 
     <!-- TABS -->
@@ -174,6 +175,7 @@
         <button class="tab" onclick="showTab('estructura')">Quien gasta</button>
         <button class="tab" onclick="showTab('ccaa')">CCAA y Entes Locales</button>
         <button class="tab" onclick="showTab('contexto')">Contexto y deficit</button>
+        <button class="tab" onclick="showTab('sobre')">Sobre este panel</button>
     </div>
 
     <!-- ============ TAB 1: VISION GENERAL ============ -->
@@ -594,6 +596,69 @@
                 <strong>Nuevas reglas fiscales europeas</strong>
                 <p>Desde 2025 estan en vigor las nuevas reglas fiscales de la UE, que establecen sendas de reduccion del deficit y la deuda mas flexibles pero vinculantes. España debe presentar un plan fiscal-estructural a medio plazo que garantice la sostenibilidad de las finanzas publicas.</p>
             </div>
+        </div>
+    </div>
+
+    <!-- ============ TAB 8: SOBRE ESTE PANEL ============ -->
+    <div id="tab-sobre" class="tab-content">
+        <div class="card">
+            <h2>Por qué hice este panel</h2>
+            <p>En 2021 publiqué <a href="https://www.linkedin.com/pulse/la-odisea-de-entender-los-pge-jose-cordovilla" target="_blank"><em>La odisea de entender los PGE</em></a>, un artículo en el que contaba mi experiencia intentando descifrar los presupuestos públicos de mi país. Pasé semanas cruzando documentos contables, libros y capítulos de los PGE para poder responder a preguntas básicas: ¿cuánto ingresa el Estado? ¿En qué se gasta? ¿Cuánto se destina a infraestructuras, a sanidad, a educación?</p>
+            <p>Cinco años después, la situación no ha mejorado. Los PGE siguen siendo documentos contables pensados para justificar el aparato administrativo, no para informar al ciudadano. La transparencia presupuestaria en España es nominal: los datos existen, pero están dispersos en decenas de hojas Excel con clasificaciones crípticas, años prorrogados sin señalizar, y cifras que no se pueden comparar sin entender la estructura institucional que hay detrás.</p>
+            <p>Este panel es un intento de hacer lo que el Estado debería hacer: presentar los presupuestos de forma que cualquiera pueda entenderlos.</p>
+        </div>
+
+        <div class="card">
+            <h2>Fuentes</h2>
+            <h3>Datos presupuestarios (fuente principal)</h3>
+            <p>
+                <a href="https://www.sepg.pap.hacienda.gob.es/sitios/sepg/es-ES/Presupuestos/DocumentacionEstadisticas/Estadisticas/paginas/estadisticas.aspx" target="_blank">Estadísticas presupuestarias — SEPG, Ministerio de Hacienda</a><br>
+                <span style="color: var(--text-secondary); font-size: 13px;">Ficheros Excel con los PGE consolidados, del Estado, Seguridad Social, Organismos Autónomos y resto de entidades (enero 2026)</span>
+            </p>
+            <p>
+                <a href="https://www.oficinavirtual.pap.hacienda.gob.es/sitios/oficinavirtual/es-ES/InformacionUtilidades/UtilidadesPresupuestarias/ElaboracionPge05/Paginas/DescargaPge05.aspx" target="_blank">Portal de descarga de datos PGE — Oficina Virtual IGAE</a>
+            </p>
+
+            <h3>Techo de gasto y financiación territorial</h3>
+            <p>
+                <a href="https://www.lamoncloa.gob.es/consejodeministros/resumenes/paginas/2025/181125-rueda-de-prensa-ministros.aspx" target="_blank">Techo de gasto 2026 — La Moncloa (18/11/2025)</a><br>
+                <span style="color: var(--text-secondary); font-size: 13px;">212.026 M€ sin fondos UE / 216.177 M€ con Plan de Recuperación</span>
+            </p>
+            <p>
+                <a href="https://www.hacienda.gob.es/en-GB/Prensa/Noticias/Paginas/2025/20251118-NP-CM-TECHO-GASTO.aspx" target="_blank">Nota de prensa techo de gasto — Ministerio de Hacienda</a><br>
+                <span style="color: var(--text-secondary); font-size: 13px;">Entregas a cuenta a CCAA (157.731 M€) y EELL (29.246 M€)</span>
+            </p>
+
+            <h3>Déficit y deuda pública</h3>
+            <p>
+                <a href="https://www.swissinfo.ch/spa/espa%C3%B1a-cerr%C3%B3-2024-con-un-d%C3%A9ficit-del-3,2-%25-y-una-deuda-del-101,8-%25-del-pib,-seg%C3%BAn-eurostat/89197001" target="_blank">Déficit y deuda 2024 — Eurostat vía Swissinfo</a><br>
+                <span style="color: var(--text-secondary); font-size: 13px;">Déficit 3,2%, deuda 101,8% PIB (2024)</span>
+            </p>
+            <p>
+                <a href="https://www.caixabankresearch.com/es/publicaciones/notas-breves-actualidad-economica-y-financiera/espana/deficit-publico-descendio-315" target="_blank">Análisis déficit público 2024 — CaixaBank Research</a>
+            </p>
+            <p>
+                <a href="https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesSeriadas/DocumentosOcasionales/25/Fich/be2503-art04.pdf" target="_blank">Deuda pública 2024 — Banco de España</a>
+            </p>
+
+            <h3>Informes de referencia</h3>
+            <p>
+                <a href="https://www.airef.es/wp-content/uploads/2025/04/Informes_presupuestos_iniciales/Informe-Presupuestos-Iniciales-2025.pdf" target="_blank">Informe de Presupuestos Iniciales 2025 — AIReF</a>
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Aviso</h2>
+            <p>Este panel tiene un propósito estrictamente informativo. No es un documento oficial ni pretende sustituir a las fuentes primarias.</p>
+            <p>Los datos proceden de fuentes públicas y han sido procesados con la ayuda de herramientas de inteligencia artificial. Tanto la IA como el autor pueden cometer errores de interpretación, transcripción o cálculo. Si detectas alguno, agradezco que lo reportes abriendo un <a href="https://github.com/jcordovilla/presupuestos-espana/issues" target="_blank">issue en GitHub</a>.</p>
+            <p>Dicho esto: que un ejercicio ciudadano de divulgación pueda contener alguna imprecisión no exime a las administraciones públicas de su obligación de informar con claridad sobre cómo gestionan los recursos de todos. Ese servicio, a día de hoy, sigue sin prestarse.</p>
+        </div>
+
+        <div class="card">
+            <h2>Autor</h2>
+            <p><a href="https://www.linkedin.com/in/josecordovilla/" target="_blank"><strong>Jose Cordovilla</strong></a> · Director de Consultoría Estratégica en <a href="https://www.typsa.com" target="_blank">TYPSA</a>. Experto en infraestructuras y gestión pública.</p>
+            <p>Hecho con la ayuda de mis agentes de IA, principalmente de <a href="https://claude.ai" target="_blank">Claude</a> (Anthropic).</p>
+            <p style="margin-top: 16px; font-size: 13px; color: var(--text-secondary);">Contenido y visualización: <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank">CC BY 4.0</a>. Datos de dominio público (Gobierno de España).</p>
         </div>
     </div>
 
