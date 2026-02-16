@@ -64,7 +64,7 @@ Dicho esto: que un ejercicio ciudadano de divulgación pueda contener alguna imp
 
 ## Licencia
 
-Datos de dominio público (Gobierno de España). Código y visualización: MIT.
+Datos de dominio público (Gobierno de España). Contenido y visualización: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es).
 
 ---
 
