@@ -70,4 +70,4 @@ Datos de dominio público (Gobierno de España). Contenido y visualización: [CC
 
 ---
 
-**Autor:** [Jose Cordovilla](https://www.linkedin.com/in/josecordovilla/) · Director de Consultoría Estratégica en [TYPSA](https://www.typsa.com). Experto en infraestructuras y gestión pública. Hecho con la ayuda de mis agentes de IA, principalmente de [Claude](https://claude.ai) (Anthropic).
+**Autor:** [Jose Cordovilla](https://www.linkedin.com/in/josecordovilla/) · Ingeniero de Caminos. Experto en infraestructuras y gestión pública. Hecho con la ayuda de mis agentes de IA, principalmente de [Claude](https://claude.ai) (Anthropic).
