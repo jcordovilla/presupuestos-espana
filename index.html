@@ -559,14 +559,14 @@
                 <div class="kpi-sub">Casi el doble que la media de la eurozona</div>
             </div>
             <div class="kpi-card red">
-                <div class="kpi-label">Déficit AAPP 2025</div>
-                <div class="kpi-value">~2,8% PIB</div>
-                <div class="kpi-sub">Previsión. Objetivo 2026: 2,1%</div>
+                <div class="kpi-label">Déficit AAPP 2024</div>
+                <div class="kpi-value">3,2% PIB</div>
+                <div class="kpi-sub">Eurostat, 1ª estimación abril 2025</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-label">Deuda Pública 2026</div>
-                <div class="kpi-value">100,9% PIB</div>
-                <div class="kpi-sub">Objetivo: bajar del 100% en 2027</div>
+                <div class="kpi-label">Deuda Pública 2024</div>
+                <div class="kpi-value">101,8% PIB</div>
+                <div class="kpi-sub">Eurostat, 1ª estimación abril 2025</div>
             </div>
             <div class="kpi-card gold">
                 <div class="kpi-label">Techo gasto 2026</div>
@@ -581,7 +581,7 @@
                 <canvas id="chart-evolucion"></canvas>
             </div>
             <div class="chart-box">
-                <h3>Déficit y deuda: histórico y senda prevista</h3>
+                <h3>Déficit y deuda pública (2020–2025)</h3>
                 <canvas id="chart-déficit"></canvas>
             </div>
         </div>
@@ -891,29 +891,28 @@ new Chart(document.getElementById('chart-evolucion'), {
     }
 });
 
-// Déficit y deuda - histórico + previsiones
+// Déficit y deuda - histórico 2020-2025
 new Chart(document.getElementById('chart-déficit'), {
     type: 'bar',
     data: {
-        labels: ['2020','2021','2022','2023','2024','2025 (p)','2026 (obj)','2027 (obj)','2028 (obj)'],
+        labels: ['2020','2021','2022','2023','2024','2025 (p)'],
         datasets: [
             {
                 label: 'Déficit (% PIB)',
-                data: [10.1, 6.7, 4.7, 3.6, 3.2, 2.8, 2.1, 1.8, 1.5],
+                data: [9.9, 6.7, 4.6, 3.5, 3.2, 2.8],
                 backgroundColor: function(ctx) {
-                    return ctx.dataIndex <= 4 ? '#c8102eCC' : '#c8102e66';
+                    return ctx.dataIndex <= 4 ? '#c8102eCC' : '#c8102e88';
                 },
                 borderRadius: 4,
                 yAxisID: 'y'
             },
             {
                 label: 'Deuda (% PIB)',
-                data: [120.3, 116.8, 111.6, 105.1, 101.8, 102, 100.9, 100, 99.1],
+                data: [119.3, 115.7, 109.5, 105.1, 101.8, 101.4],
                 type: 'line',
                 borderColor: '#1b2a4a',
                 backgroundColor: '#1b2a4a20',
                 borderWidth: 3, pointRadius: 5, pointBackgroundColor: '#1b2a4a',
-                borderDash: function(ctx) { return []; },
                 segment: {
                     borderDash: ctx => ctx.p1DataIndex >= 4 ? [5,5] : []
                 },
@@ -930,7 +929,7 @@ new Chart(document.getElementById('chart-déficit'), {
         },
         scales: {
             y: { beginAtZero: true, max: 12, title: {display:true,text:'Déficit % PIB'}, ticks: { callback: v => v+'%' }},
-            y1: { position:'right', min: 95, max: 125, title: {display:true,text:'Deuda % PIB'}, ticks: { callback: v => v+'%' }, grid:{display:false}}
+            y1: { position:'right', min: 0, max: 125, title: {display:true,text:'Deuda % PIB'}, ticks: { callback: v => v+'%' }, grid:{display:false}}
         }
     }
 });
