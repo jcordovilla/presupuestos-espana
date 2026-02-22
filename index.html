@@ -544,6 +544,51 @@
             <canvas id="chart-transf-ccaa"></canvas>
             <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Nota: estas cifras reflejan solo las transferencias directas del Estado a las CCAA en los PGE (art. 45 y 75). No incluyen los impuestos cedidos (IRPF, IVA, Especiales) que las CCAA recaudan directamente. Los recursos totales de las CCAA (entregas a cuenta + liquidaciones + impuestos cedidos) son muy superiores: 157.731 M€ previstos para 2026.</p>
         </div>
+
+        <div class="card">
+            <h2>Desglose por Comunidad Autónoma</h2>
+            <p>Las CCAA de régimen común (todas excepto País Vasco y Navarra) reciben del Estado unas <span class="highlight">"entregas a cuenta"</span> que incluyen su participación en los impuestos cedidos (IRPF, IVA, Especiales) y los fondos del sistema de financiación. Estas entregas son la principal fuente de financiación de cada comunidad.</p>
+            <div class="explain-box warn">
+                <strong>País Vasco y Navarra: régimen foral</strong>
+                <p>Estas dos comunidades no aparecen en las entregas a cuenta porque tienen un sistema propio: recaudan directamente todos los impuestos en su territorio y pagan un "cupo" (País Vasco) o "aportación" (Navarra) al Estado. Sus presupuestos propios sí se incluyen en la tabla inferior.</p>
+            </div>
+        </div>
+
+        <div class="chart-box" style="margin-bottom: var(--gap);">
+            <h3>Entregas a cuenta del Estado a las CCAA en 2026 (millones €, régimen común)</h3>
+            <canvas id="chart-ccaa-entregas" style="max-height:520px;"></canvas>
+            <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuente: Ministerio de Hacienda, noviembre 2025. Total entregas a cuenta régimen común: 157.731 M€ (+7% respecto a 2025). No incluye Ceuta (56 M€) ni Melilla (44 M€). País Vasco y Navarra excluidos por régimen foral.</p>
+        </div>
+
+        <div class="card">
+            <h3>Presupuestos propios de las CCAA (2025)</h3>
+            <p style="margin-bottom:12px;">Cada CCAA aprueba su propio presupuesto, mucho mayor que las entregas a cuenta porque incluye también ingresos propios, deuda, tasas, etc. Estos son los datos disponibles para 2025:</p>
+            <table class="data-table" id="table-ccaa-ptos">
+                <thead>
+                    <tr><th>Comunidad Autónoma</th><th class="num">Presupuesto 2025 (M€)</th><th>Estado</th><th class="num">Entregas a cta. 2026 (M€)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Andalucía</td><td class="num">48.871</td><td>Aprobado</td><td class="num">29.253</td></tr>
+                    <tr><td>Cataluña</td><td class="num">~45.961</td><td>Prorrogado</td><td class="num">30.062</td></tr>
+                    <tr><td>C. Valenciana</td><td class="num">~32.291</td><td>Aprobado</td><td class="num">14.885</td></tr>
+                    <tr><td>Madrid</td><td class="num">~27.558</td><td>Aprobado</td><td class="num">21.904</td></tr>
+                    <tr><td>País Vasco</td><td class="num">15.728</td><td>Aprobado</td><td class="num">— (foral)</td></tr>
+                    <tr><td>Galicia</td><td class="num">13.954</td><td>Aprobado</td><td class="num">10.878</td></tr>
+                    <tr><td>Castilla-La Mancha</td><td class="num">12.716</td><td>Aprobado</td><td class="num">7.445</td></tr>
+                    <tr><td>Canarias</td><td class="num">11.678</td><td>Aprobado</td><td class="num">6.800</td></tr>
+                    <tr><td>Castilla y León</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">9.523</td></tr>
+                    <tr><td>Navarra</td><td class="num">6.431</td><td>Aprobado</td><td class="num">— (foral)</td></tr>
+                    <tr><td>Asturias</td><td class="num">6.091</td><td>Aprobado</td><td class="num">3.965</td></tr>
+                    <tr><td>Aragón</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">5.297</td></tr>
+                    <tr><td>Murcia</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">4.880</td></tr>
+                    <tr><td>Extremadura</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">4.461</td></tr>
+                    <tr><td>Cantabria</td><td class="num">3.749</td><td>Aprobado</td><td class="num">2.677</td></tr>
+                    <tr><td>Baleares</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">3.152</td></tr>
+                    <tr><td>La Rioja</td><td class="num">2.084</td><td>Aprobado</td><td class="num">1.440</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuentes: presupuestos propios de cada CCAA (portales oficiales, datos 2025). "n/d" = presupuesto prorrogado sin dato público consolidado. Las entregas a cuenta corresponden a 2026. Los presupuestos propios son siempre superiores a las entregas porque incluyen impuestos propios, tasas, deuda y otros ingresos. "~" indica cifra aproximada de presupuesto prorrogado de ejercicios anteriores.</p>
+        </div>
     </div>
 
     <!-- ============ TAB 7: CONTEXTO ============ -->
@@ -935,6 +980,31 @@ new Chart(document.getElementById('chart-déficit'), {
             y: { beginAtZero: true, max: 12, title: {display:true,text:'Déficit % PIB'}, ticks: { callback: v => v+'%' }},
             y1: { position:'right', min: 0, max: 125, title: {display:true,text:'Deuda % PIB'}, ticks: { callback: v => v+'%' }, grid:{display:false}}
         }
+    }
+});
+
+// Entregas a cuenta por CCAA 2026
+const ccaaEntregas = {
+    labels: ['Cataluña','Andalucía','Madrid','C. Valenciana','Galicia','Castilla y León','Castilla-La Mancha','Canarias','Aragón','Murcia','Extremadura','Asturias','Baleares','Cantabria','La Rioja'],
+    values: [30062, 29253, 21904, 14885, 10878, 9523, 7445, 6800, 5297, 4880, 4461, 3965, 3152, 2677, 1440]
+};
+new Chart(document.getElementById('chart-ccaa-entregas'), {
+    type: 'bar',
+    data: {
+        labels: ccaaEntregas.labels,
+        datasets: [{
+            data: ccaaEntregas.values,
+            backgroundColor: ccaaEntregas.values.map((v,i) => {
+                const palette = ['#c8102e','#1b2a4a','#f4b400','#4C72B0','#55A868','#DD8452','#C44E52','#8172B3','#937860','#64b5f6','#81c784','#ffb74d','#e57373','#7986cb','#4db6ac'];
+                return palette[i % palette.length] + 'BB';
+            }),
+            borderRadius: 4
+        }]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+        plugins: { legend: {display:false}, tooltip: { callbacks: { label: ctx => fmtM(ctx.parsed.x) }}},
+        scales: { x: { ticks: { callback: v => fmt(v/1000)+'k' }}}
     }
 });
 
