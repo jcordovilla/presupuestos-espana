@@ -86,7 +86,7 @@
         .kpi-card {
             background: var(--bg-card); border-radius: var(--radius);
             padding: 20px 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            border-left: 4px solid var(--bg-header);
+            border-left: 4px solid var(--bg-header); cursor: help;
         }
         .kpi-card.red { border-left-color: var(--accent); }
         .kpi-card.gold { border-left-color: var(--gold); }
@@ -136,10 +136,18 @@
             border-radius: var(--radius); padding: 24px; margin-bottom: var(--gap);
         }
         .analogy h3 { font-size: 16px; margin-bottom: 12px; }
-        .analogy .bar-container { margin-bottom: 8px; }
+        .analogy .bar-container { margin-bottom: 8px; position: relative; cursor: pointer; }
         .analogy .bar-label { font-size: 13px; display: flex; justify-content: space-between; margin-bottom: 2px; }
         .analogy .bar-bg { height: 24px; background: #e0e4ea; border-radius: 4px; overflow: hidden; }
         .analogy .bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; color: white; font-weight: 600; }
+        .analogy .bar-container[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute; left: 0; top: 100%; z-index: 100;
+            background: #1e293b; color: #fff; font-size: 13px; line-height: 1.45;
+            padding: 10px 14px; border-radius: 6px; max-width: 420px; width: max-content;
+            box-shadow: 0 4px 16px rgba(0,0,0,.25); pointer-events: none;
+            white-space: pre-line; margin-top: 4px;
+        }
 
         /* Footer */
         .footer { text-align: center; padding: 16px; font-size: 12px; color: var(--text-secondary); }
@@ -195,22 +203,22 @@
 
         <!-- KPIs -->
         <div class="kpi-row">
-            <div class="kpi-card">
+            <div class="kpi-card" title="La cifra total incluyendo operaciones financieras (préstamos, avales, deuda). Es la cifra 'bruta' del presupuesto, pero no refleja el gasto real en servicios.">
                 <div class="kpi-label">Presupuesto Total</div>
                 <div class="kpi-value">578.183 M€</div>
                 <div class="kpi-sub">Incluye operaciones financieras</div>
             </div>
-            <div class="kpi-card red">
+            <div class="kpi-card red" title="Si quitamos las operaciones financieras (que son movimientos de deuda, no gasto real), esto es lo que el Estado gasta de verdad en servicios, pensiones, inversiones, etc.">
                 <div class="kpi-label">Gasto No Financiero</div>
                 <div class="kpi-value">445.581 M€</div>
                 <div class="kpi-sub">Lo que realmente se gasta en servicios</div>
             </div>
-            <div class="kpi-card gold">
+            <div class="kpi-card gold" title="Todo lo que el Estado recauda: impuestos, tasas, cotizaciones sociales, fondos europeos. Sin contar operaciones financieras. Es menos que el gasto → la diferencia es el déficit.">
                 <div class="kpi-label">Ingresos No Financieros</div>
                 <div class="kpi-value">383.171 M€</div>
                 <div class="kpi-sub">Lo que se recauda</div>
             </div>
-            <div class="kpi-card green">
+            <div class="kpi-card green" title="Si sumamos todo el gasto público de España (Estado + CCAA + Ayuntamientos + Seguridad Social), se alcanza el 46% del PIB. Los PGE de esta web son solo una parte de ese total.">
                 <div class="kpi-label">Gasto Público Total AAPP</div>
                 <div class="kpi-value">~46% PIB</div>
                 <div class="kpi-sub">Todas las administraciones, ~680.000 M€</div>
@@ -221,37 +229,37 @@
         <div class="analogy">
             <h3>Si el presupuesto fuera una familia que gana 100€...</h3>
             <p style="font-size:13px; margin-bottom:16px; color: var(--text-secondary);">Para entender las proporciones, imaginemos que todos los ingresos del Estado (383.171 M€) equivalen a 100€. Así se repartirían los gastos no financieros (445.581 M€ = 116€, es decir, se gasta más de lo que ingresa):</p>
-            <div class="bar-container">
+            <div class="bar-container" data-tooltip="Jubilación, viudedad, incapacidad, desempleo... Es con diferencia la mayor partida: de cada euro que gasta el Estado, casi 43 céntimos van a pagar pensiones y prestaciones sociales.">
                 <div class="bar-label"><span>Pensiones y prestaciones</span><span>49,5€</span></div>
                 <div class="bar-bg"><div class="bar-fill" style="width:42.6%; background:#c8102e;">49,5€</div></div>
             </div>
-            <div class="bar-container">
+            <div class="bar-container" data-tooltip="Dinero que el Estado reparte a las comunidades autónomas (para que paguen sanidad, educación...), a los ayuntamientos y la cuota anual que España paga a la Unión Europea.">
                 <div class="bar-label"><span>Transferencias a CCAA, Ayuntamientos y UE</span><span>22,5€</span></div>
                 <div class="bar-bg"><div class="bar-fill" style="width:19.4%; background:#f4b400;">22,5€</div></div>
             </div>
-            <div class="bar-container">
-                <div class="bar-label"><span>Deuda pública (intereses)</span><span>8,2€</span></div>
-                <div class="bar-bg"><div class="bar-fill" style="width:7.1%; background:#5a6474;">8,2€</div></div>
-            </div>
-            <div class="bar-container">
-                <div class="bar-label"><span>Personal (sueldos funcionarios Estado)</span><span>7,2€</span></div>
-                <div class="bar-bg"><div class="bar-fill" style="width:6.2%; background:#2c3e6b;">7,2€</div></div>
-            </div>
-            <div class="bar-container">
-                <div class="bar-label"><span>Defensa y Seguridad</span><span>6,0€</span></div>
-                <div class="bar-bg"><div class="bar-fill" style="width:5.2%; background:#6b8e23;">6,0€</div></div>
-            </div>
-            <div class="bar-container">
-                <div class="bar-label"><span>Infraestructuras e inversiones</span><span>6,8€</span></div>
-                <div class="bar-bg"><div class="bar-fill" style="width:5.9%; background:#4C72B0;">6,8€</div></div>
-            </div>
-            <div class="bar-container">
+            <div class="bar-container" data-tooltip="Solo la parte que gestiona el Estado central. El grueso de educación (~55.000 M€) y sanidad (~95.000 M€) lo pagan las comunidades autónomas con su propio presupuesto. Aquí se incluyen becas, investigación (CSIC) y universidades públicas estatales.">
                 <div class="bar-label"><span>Investigación, Educación, Sanidad, Servicios Sociales</span><span>8,5€</span></div>
                 <div class="bar-bg"><div class="bar-fill" style="width:7.3%; background:#55A868;">8,5€</div></div>
             </div>
-            <div class="bar-container">
+            <div class="bar-container" data-tooltip="Lo que España paga cada año en intereses por el dinero que tiene prestado. Como los intereses de una hipoteca, pero a escala país. No reduce la deuda, solo paga el coste de tenerla.">
+                <div class="bar-label"><span>Deuda pública (intereses)</span><span>8,2€</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width:7.1%; background:#5a6474;">8,2€</div></div>
+            </div>
+            <div class="bar-container" data-tooltip="Industria, energía, agricultura, cultura, deporte, vivienda, medio ambiente y otras partidas menores. Cada una pequeña por separado, pero juntas suman una cantidad significativa.">
                 <div class="bar-label"><span>Resto (industria, agricultura, cultura, etc.)</span><span>7,7€</span></div>
                 <div class="bar-bg"><div class="bar-fill" style="width:6.6%; background:#8172B3;">7,7€</div></div>
+            </div>
+            <div class="bar-container" data-tooltip="Sueldos de los funcionarios que dependen directamente del Estado central: ministerios, policía, militares, jueces, diplomáticos. No incluye maestros ni sanitarios, que cobran de las comunidades autónomas.">
+                <div class="bar-label"><span>Personal (sueldos funcionarios Estado)</span><span>7,2€</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width:6.2%; background:#2c3e6b;">7,2€</div></div>
+            </div>
+            <div class="bar-container" data-tooltip="Carreteras, trenes (AVE), puertos, aeropuertos, obras hidráulicas y otros proyectos de construcción y mejora de bienes públicos. Es la inversión directa del Estado.">
+                <div class="bar-label"><span>Infraestructuras e inversiones</span><span>6,8€</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width:5.9%; background:#4C72B0;">6,8€</div></div>
+            </div>
+            <div class="bar-container" data-tooltip="Fuerzas Armadas, Policía Nacional, Guardia Civil y cárceles. Todo lo que tiene que ver con defender el país y mantener la seguridad interior.">
+                <div class="bar-label"><span>Defensa y Seguridad</span><span>6,0€</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width:5.2%; background:#6b8e23;">6,0€</div></div>
             </div>
             <p style="font-size:12px; margin-top:12px; color: var(--text-secondary);">Total: ~116€ por cada 100€ que ingresa. La diferencia (16€) es el déficit, que se financia con deuda.</p>
         </div>
@@ -741,13 +749,13 @@ function fmtM(n) { return fmt(n) + ' M€'; }
 
 // ---- DATA ----
 const ingresosData = {
-    labels: ['Impuestos directos', 'Impuestos indirectos', 'Tasas y otros', 'Transf. corrientes', 'Ingresos patrimoniales', 'Transf. capital'],
-    values: [269000, 57809, 14471, 19014, 6338, 16188]
+    labels: ['Impuestos directos', 'Impuestos indirectos', 'Transf. corrientes', 'Transf. capital', 'Tasas y otros', 'Ingresos patrimoniales'],
+    values: [269000, 57809, 19014, 16188, 14471, 6338]
 };
 
 const gastosEcoData = {
-    labels: ['Personal', 'Bienes y servicios', 'Gastos financieros', 'Transferencias corrientes', 'Fondo Contingencia', 'Inversiones reales', 'Transferencias de capital'],
-    values: [27476, 10605, 31373, 328795, 3964, 13511, 29857]
+    labels: ['Transferencias corrientes', 'Gastos financieros', 'Transferencias de capital', 'Personal', 'Inversiones reales', 'Bienes y servicios', 'Fondo Contingencia'],
+    values: [328795, 31373, 29857, 27476, 13511, 10605, 3964]
 };
 
 const políticasData = [
@@ -764,8 +772,8 @@ const políticasData = [
     {nombre: 'Industria y Energía', valor: 9796},
     {nombre: 'Agricultura, Pesca', valor: 8412},
     {nombre: 'Fomento del empleo', valor: 7516},
-    {nombre: 'Servicios Sociales', valor: 5744},
     {nombre: 'Gestión SS e Inclusión', valor: 6965},
+    {nombre: 'Servicios Sociales', valor: 5744},
     {nombre: 'Sanidad', valor: 5505},
     {nombre: 'Educación', valor: 5338},
     {nombre: 'Vivienda y Edificación', valor: 3483},
@@ -787,6 +795,96 @@ const evolucionData = {
     values: [318444, 325954, 419505, 427012, 450722, 445581]
 };
 
+// ---- EXPLICACIONES (tooltips enriquecidos) ----
+const explicaciones = {
+    // Ingresos
+    'Impuestos directos': 'IRPF (lo que te descuentan de la nómina) + Impuesto de Sociedades (lo que pagan las empresas sobre sus beneficios). Se aplican directamente sobre lo que ganas.',
+    'Impuestos indirectos': 'IVA y los Impuestos Especiales (alcohol, tabaco, carburantes). Se pagan al consumir. Aquí solo aparece la parte estatal; el grueso del IVA va a las CCAA.',
+    'Tasas y otros': 'Tasas administrativas (DNI, pasaporte, matrículas universitarias), precios públicos por servicios del Estado, multas y sanciones.',
+    'Transf. corrientes': 'Dinero que recibe el Estado de otras instituciones: sobre todo de la Unión Europea (ayudas agrícolas, fondos de desarrollo) y de organismos públicos españoles.',
+    'Ingresos patrimoniales': 'Lo que el Estado gana con lo que posee: beneficios de empresas públicas (Loterías, AENA...), alquileres de edificios e intereses de préstamos que ha concedido.',
+    'Transf. capital': 'Fondos recibidos para inversiones concretas: sobre todo dinero de la UE (Next Generation, FEDER) para infraestructuras, digitalización y transición energética.',
+    // Gastos económicos
+    'Personal': 'Sueldos y cotizaciones de los empleados públicos del Estado: funcionarios de ministerios, fuerzas armadas, policía, jueces, diplomáticos, etc.',
+    'Bienes y servicios': 'Lo que el Estado "compra" para funcionar: suministros, alquileres, mantenimiento de edificios, material de oficina, servicios informáticos, limpieza.',
+    'Gastos financieros': 'Intereses de la deuda pública. Lo que España paga cada año a quienes le han prestado dinero (bonos del Tesoro, obligaciones).',
+    'Transferencias corrientes': 'El bloque más grande: dinero que el Estado envía a otros (sin recibir nada a cambio). Incluye pensiones, desempleo, financiación de CCAA y la cuota que pagamos a la UE.',
+    'Fondo Contingencia': 'Una reserva para imprevistos: catástrofes naturales, crisis, necesidades urgentes no previstas en el presupuesto inicial.',
+    'Inversiones reales': 'Construcción y mejora de bienes públicos: carreteras, hospitales, edificios, equipamiento militar, sistemas informáticos, I+D.',
+    'Transferencias de capital': 'Dinero que el Estado da a otros para que inviertan: subvenciones a comunidades autónomas para obras, ayudas a empresas para investigación, etc.',
+    // Políticas de gasto
+    'Pensiones': 'Pensiones contributivas de jubilación, viudedad, orfandad e incapacidad. Es la mayor partida del presupuesto con diferencia.',
+    'Transf. a otras AAPP': 'Financiación que el Estado envía a CCAA y Ayuntamientos: participación en impuestos, fondos de compensación, cooperación económica local.',
+    'Deuda Pública': 'Pago de intereses y amortización de la deuda del Estado. No es "gasto productivo", pero es ineludible.',
+    'Serv. carácter general': 'El "coste de estructura" del Estado: administración general, informática, gestión de personal, estadística (INE), alta dirección.',
+    'Otras Prestac. Económicas': 'Ayudas económicas directas a personas: pensiones para quienes no han cotizado lo suficiente, ayudas a familias, Ingreso Mínimo Vital, becas.',
+    'Desempleo': 'Prestaciones y subsidios por desempleo (gestionados por el SEPE), formación profesional para el empleo.',
+    'Investigación civil': 'I+D+i: financiación de universidades, CSIC, proyectos de investigación, innovación tecnológica, programas europeos de ciencia.',
+    'Infraestructuras': 'Carreteras, ferrocarriles (AVE), puertos, aeropuertos, obras hidráulicas. Inversión directa del Estado en obra pública.',
+    'Defensa': 'Fuerzas Armadas: personal militar, equipamiento, operaciones internacionales, mantenimiento de bases.',
+    'Seguridad ciudadana': 'Policía Nacional, Guardia Civil, instituciones penitenciarias, protección civil. Orden público y seguridad interior.',
+    'Industria y Energía': 'Política industrial, transición energética, regulación de mercados energéticos, ayudas al sector minero, eficiencia energética.',
+    'Agricultura, Pesca': 'PAC (Política Agrícola Común de la UE), ayudas a agricultores y pescadores, desarrollo rural, seguros agrarios.',
+    'Fomento del empleo': 'Bonificaciones a la contratación, programas de empleo juvenil, políticas activas de empleo, economía social.',
+    'Servicios Sociales': 'Dependencia, discapacidad, protección de menores, atención a la inmigración. Solo la parte estatal; las CCAA gestionan la mayor parte.',
+    'Gestión SS e Inclusión': 'Lo que cuesta gestionar la Seguridad Social (las oficinas del INSS donde se tramitan las pensiones, la Tesorería) y los programas de lucha contra la pobreza.',
+    // Subsectores
+    'Seguridad Social (44,6%)': 'El sistema que paga las pensiones, las bajas laborales, la maternidad/paternidad. Se financia con las cotizaciones que se descuentan de cada nómina (trabajador + empresa), más ayuda del Estado.',
+    'Estado (43,2%)': 'Los ministerios y órganos constitucionales. Incluye defensa, justicia, infraestructuras, deuda pública y las transferencias a CCAA y entes locales.',
+    'Organismos Autónomos (10%)': 'Organismos públicos que funcionan con cierta independencia: SEPE (el que gestiona el desempleo), Agencia Tributaria (Hacienda), FOGASA, Parques Nacionales, Instituto de la Mujer.',
+    'Resto Entidades (2,2%)': 'Agencias estatales, museos nacionales, CSIC, AEMET, AESA y otras entidades del sector público administrativo.',
+    // SCG desglose
+    'Administración General': 'Lo que cuesta mantener los ministerios funcionando: edificios, ordenadores, comunicaciones, gestión de personal, contratos con proveedores.',
+    'Otros servicios': 'Procesos electorales, protección de datos, Centro Criptológico y otros servicios que dan soporte a toda la Administración.',
+    'Relaciones CCAA/EELL': 'El dinero que el Estado dedica a equilibrar las diferencias entre regiones ricas y pobres, y a cooperar económicamente con ayuntamientos y comunidades.',
+    'Estadística e Información': 'INE (Instituto Nacional de Estadística), publicidad institucional, medios de comunicación públicos.',
+    'Alta Dirección del Estado': 'Presidencia del Gobierno, Consejo de Ministros, Delegaciones y Subdelegaciones del Gobierno en cada provincia.',
+};
+
+// Configuración global de tooltips enriquecidos
+const tooltipConfig = {
+    bodyFont: { size: 13 },
+    titleFont: { size: 14, weight: 'bold' },
+    padding: 12,
+    boxPadding: 6,
+    maxWidth: 380,
+    displayColors: false,
+};
+
+// Función auxiliar: devuelve array de líneas para tooltip multilínea
+function wrapText(text, maxLen) {
+    const words = text.split(' ');
+    const lines = [];
+    let line = '';
+    words.forEach(w => {
+        if ((line + ' ' + w).length > maxLen) { lines.push(line.trim()); line = w; }
+        else { line += ' ' + w; }
+    });
+    if (line.trim()) lines.push(line.trim());
+    return lines;
+}
+
+function tooltipLabelIngresos(ctx) {
+    const v = ctx.chart.config.type === 'doughnut'
+        ? (() => { const t = ctx.dataset.data.reduce((a,b)=>a+b,0); return fmtM(ctx.parsed) + ' (' + (ctx.parsed/t*100).toFixed(1) + '%)'; })()
+        : fmtM(ctx.parsed.x || ctx.parsed.y || ctx.parsed);
+    return [v, '', ...(explicaciones[ctx.label] ? wrapText(explicaciones[ctx.label], 52) : [])];
+}
+function tooltipLabelGastos(ctx) {
+    const v = ctx.chart.config.type === 'doughnut'
+        ? (() => { const t = ctx.dataset.data.reduce((a,b)=>a+b,0); return fmtM(ctx.parsed) + ' (' + (ctx.parsed/t*100).toFixed(1) + '%)'; })()
+        : fmtM(ctx.parsed.x || ctx.parsed.y || ctx.parsed);
+    return [v, '', ...(explicaciones[ctx.label] ? wrapText(explicaciones[ctx.label], 52) : [])];
+}
+function tooltipLabelPoliticas(ctx) {
+    const v = fmtM(ctx.parsed.x);
+    return [v, '', ...(explicaciones[ctx.label] ? wrapText(explicaciones[ctx.label], 52) : [])];
+}
+function tooltipLabelGeneric(ctx) {
+    const v = fmtM(ctx.parsed.x || ctx.parsed.y || ctx.parsed);
+    return [v, '', ...(explicaciones[ctx.label] ? wrapText(explicaciones[ctx.label], 52) : [])];
+}
+
 // ---- CHARTS ----
 // Ingresos bar
 new Chart(document.getElementById('chart-ingresos-tipo'), {
@@ -802,7 +900,7 @@ new Chart(document.getElementById('chart-ingresos-tipo'), {
     },
     options: {
         responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-        plugins: { legend: {display:false}, tooltip: { callbacks: { label: ctx => fmtM(ctx.parsed.x) }}},
+        plugins: { legend: {display:false}, tooltip: { ...tooltipConfig, callbacks: { label: tooltipLabelIngresos }}},
         scales: { x: { ticks: { callback: v => fmt(v/1000)+'k' }}}
     }
 });
@@ -817,7 +915,7 @@ new Chart(document.getElementById('chart-ingresos-donut'), {
     options: {
         responsive: true, maintainAspectRatio: false, cutout: '55%',
         plugins: { legend: { position:'right', labels:{usePointStyle:true,padding:10,font:{size:11}} },
-            tooltip: { callbacks: { label: ctx => { const t=ctx.dataset.data.reduce((a,b)=>a+b,0); return ctx.label+': '+fmtM(ctx.parsed)+' ('+(ctx.parsed/t*100).toFixed(1)+'%)'; }}}}
+            tooltip: { ...tooltipConfig, callbacks: { label: tooltipLabelIngresos }}}
     }
 });
 
@@ -834,7 +932,7 @@ new Chart(document.getElementById('chart-gastos-eco'), {
     },
     options: {
         responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-        plugins: { legend: {display:false}, tooltip: { callbacks: { label: ctx => fmtM(ctx.parsed.x) }}},
+        plugins: { legend: {display:false}, tooltip: { ...tooltipConfig, callbacks: { label: tooltipLabelGastos }}},
         scales: { x: { ticks: { callback: v => fmt(v/1000)+'k' }}}
     }
 });
@@ -849,7 +947,7 @@ new Chart(document.getElementById('chart-gastos-donut'), {
     options: {
         responsive: true, maintainAspectRatio: false, cutout: '55%',
         plugins: { legend: { position:'right', labels:{usePointStyle:true,padding:8,font:{size:11}} },
-            tooltip: { callbacks: { label: ctx => { const t=ctx.dataset.data.reduce((a,b)=>a+b,0); return ctx.label+': '+fmtM(ctx.parsed)+' ('+(ctx.parsed/t*100).toFixed(1)+'%)'; }}}}
+            tooltip: { ...tooltipConfig, callbacks: { label: tooltipLabelGastos }}}
     }
 });
 
@@ -866,7 +964,7 @@ new Chart(document.getElementById('chart-scg'), {
     },
     options: {
         responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-        plugins: { legend: {display:false}, tooltip: { callbacks: { label: ctx => fmtM(ctx.parsed.x) }}},
+        plugins: { legend: {display:false}, tooltip: { ...tooltipConfig, callbacks: { label: tooltipLabelGeneric }}},
         scales: { x: { ticks: { callback: v => fmt(v/1000)+'k' }}}
     }
 });
@@ -885,7 +983,7 @@ new Chart(document.getElementById('chart-políticas'), {
     },
     options: {
         responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-        plugins: { legend: {display:false}, tooltip: { callbacks: { label: ctx => fmtM(ctx.parsed.x) }}},
+        plugins: { legend: {display:false}, tooltip: { ...tooltipConfig, callbacks: { label: tooltipLabelPoliticas }}},
         scales: { x: { ticks: { callback: v => fmt(v/1000)+'k' }}}
     }
 });
@@ -915,7 +1013,12 @@ new Chart(document.getElementById('chart-subsectores'), {
     options: {
         responsive: true, maintainAspectRatio: false, cutout: '55%',
         plugins: { legend: { position:'bottom', labels:{usePointStyle:true,padding:12,font:{size:12}} },
-            tooltip: { callbacks: { label: ctx => ctx.label }}}
+            tooltip: { ...tooltipConfig, callbacks: { label: ctx => {
+                const lines = [ctx.label];
+                const exp = explicaciones[ctx.label];
+                if (exp) { lines.push(''); lines.push(...wrapText(exp, 52)); }
+                return lines;
+            }}}}
     }
 });
 
@@ -1003,7 +1106,14 @@ new Chart(document.getElementById('chart-ccaa-entregas'), {
     },
     options: {
         responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-        plugins: { legend: {display:false}, tooltip: { callbacks: { label: ctx => fmtM(ctx.parsed.x) }}},
+        plugins: { legend: {display:false}, tooltip: { ...tooltipConfig, callbacks: { label: ctx => {
+            const total = ccaaEntregas.values.reduce((a,b)=>a+b,0);
+            const pct = (ctx.parsed.x / total * 100).toFixed(1);
+            return [fmtM(ctx.parsed.x) + ' (' + pct + '% del total)', '',
+                'Entregas a cuenta: lo que el Estado anticipa a cada',
+                'comunidad por su participación en IRPF, IVA e',
+                'Impuestos Especiales + fondos de financiación.'];
+        }}}},
         scales: { x: { ticks: { callback: v => fmt(v/1000)+'k' }}}
     }
 });
