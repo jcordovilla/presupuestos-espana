@@ -158,6 +158,90 @@
             .kpi-row { grid-template-columns: repeat(2, 1fr); }
             .tabs { flex-wrap: nowrap; overflow-x: auto; }
         }
+        /* CCAA Fichas */
+        .ccaa-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--gap); margin-bottom: var(--gap);
+        }
+        .ccaa-mini {
+            background: var(--bg-card); border-radius: var(--radius);
+            padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            cursor: pointer; transition: all 0.2s; border-left: 4px solid var(--bg-header);
+        }
+        .ccaa-mini:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); transform: translateY(-2px); }
+        .ccaa-mini .ccaa-name { font-size: 15px; font-weight: 700; color: var(--bg-header); margin-bottom: 4px; }
+        .ccaa-mini .ccaa-pop { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+        .ccaa-mini .ccaa-bars { display: flex; flex-direction: column; gap: 4px; }
+        .ccaa-mini .ccaa-bar-row { display: flex; align-items: center; gap: 6px; font-size: 11px; }
+        .ccaa-mini .ccaa-bar-label { width: 55px; color: var(--text-secondary); flex-shrink: 0; }
+        .ccaa-mini .ccaa-bar-track { flex: 1; height: 10px; background: #e8ecf0; border-radius: 3px; overflow: hidden; }
+        .ccaa-mini .ccaa-bar-fill { height: 100%; border-radius: 3px; }
+        .ccaa-mini .ccaa-bar-val { width: 52px; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+        .ccaa-detail-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;
+            padding: 20px;
+        }
+        .ccaa-detail-overlay.active { display: flex; }
+        .ccaa-detail {
+            background: var(--bg-primary); border-radius: var(--radius);
+            max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto;
+            padding: 28px 32px; position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .ccaa-detail .close-btn {
+            position: absolute; top: 12px; right: 16px; background: none; border: none;
+            font-size: 24px; cursor: pointer; color: var(--text-secondary); padding: 4px 8px;
+        }
+        .ccaa-detail .close-btn:hover { color: var(--text-primary); }
+        .ccaa-detail h2 { font-size: 22px; color: var(--bg-header); margin-bottom: 4px; }
+        .ccaa-detail .detail-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+        .ccaa-detail .detail-kpis {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px; margin-bottom: 20px;
+        }
+        .ccaa-detail .detail-kpi {
+            background: var(--bg-card); border-radius: 8px; padding: 14px 16px;
+            border-left: 3px solid var(--bg-header);
+        }
+        .ccaa-detail .detail-kpi.san { border-left-color: var(--accent); }
+        .ccaa-detail .detail-kpi.edu { border-left-color: #4C72B0; }
+        .ccaa-detail .detail-kpi.soc { border-left-color: #55A868; }
+        .ccaa-detail .detail-kpi.ent { border-left-color: var(--gold); }
+        .ccaa-detail .detail-kpi-label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.3px; }
+        .ccaa-detail .detail-kpi-val { font-size: 20px; font-weight: 700; }
+        .ccaa-detail .detail-kpi-sub { font-size: 11px; color: var(--text-secondary); }
+        .ccaa-detail .chart-pair {
+            display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-bottom: 16px;
+        }
+        .ccaa-detail .chart-pair canvas { max-height: 260px; }
+        .ccaa-detail .chart-wrap {
+            background: var(--bg-card); border-radius: 8px; padding: 16px;
+        }
+        .ccaa-detail .chart-wrap h4 { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+        .ccaa-compare-bar { margin-bottom: 20px; }
+        .ccaa-compare-bar h4 { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+        .ccaa-compare-row {
+            display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 13px;
+        }
+        .ccaa-compare-row .cmp-label { width: 100px; color: var(--text-secondary); flex-shrink: 0; }
+        .ccaa-compare-row .cmp-track { flex: 1; height: 18px; background: #e8ecf0; border-radius: 4px; overflow: hidden; position: relative; }
+        .ccaa-compare-row .cmp-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; font-size: 11px; color: #fff; font-weight: 600; }
+        .ccaa-compare-row .cmp-avg {
+            position: absolute; top: 0; bottom: 0; width: 2px; background: #333;
+        }
+        .ccaa-compare-row .cmp-val { width: 70px; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+        @media (max-width: 768px) {
+            .ccaa-grid { grid-template-columns: 1fr 1fr; }
+            .ccaa-detail .chart-pair { grid-template-columns: 1fr; }
+            .ccaa-detail .detail-kpis { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .ccaa-grid { grid-template-columns: 1fr; }
+        }
+
         @media print {
             .tabs { display: none; }
             .tab-content { display: block !important; page-break-inside: avoid; }
@@ -596,6 +680,57 @@
                 </tbody>
             </table>
             <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuentes: presupuestos propios de cada CCAA (portales oficiales, datos 2025). "n/d" = presupuesto prorrogado sin dato público consolidado. Las entregas a cuenta corresponden a 2026. Los presupuestos propios son siempre superiores a las entregas porque incluyen impuestos propios, tasas, deuda y otros ingresos. "~" indica cifra aproximada de presupuesto prorrogado de ejercicios anteriores.</p>
+        </div>
+
+        <div class="card">
+            <h2>Fichas por Comunidad Autónoma</h2>
+            <p>¿En qué gasta cada comunidad su presupuesto? Haz clic en cualquier tarjeta para ver el detalle: sanidad, educación, protección social y financiación. Las barras muestran el gasto per cápita comparado con la media nacional.</p>
+            <div class="explain-box tip">
+                <strong>¿Por qué varían tanto los datos entre comunidades?</strong>
+                <p>Cada CCAA tiene competencias, demografía e ingresos diferentes. Además, País Vasco y Navarra (régimen foral) recaudan sus propios impuestos, lo que explica que no reciban entregas a cuenta del Estado. Los datos de gasto funcional (sanidad, educación, social) proceden de presupuestos iniciales 2025 y gasto público 2023.</p>
+            </div>
+        </div>
+
+        <div class="card" style="padding: 12px 16px;">
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                <span style="font-size:12px;color:var(--text-secondary);">Ordenar por:</span>
+                <button class="tab" onclick="sortCCAAGrid('poblacion')" id="sort-poblacion" style="padding:6px 12px;font-size:12px;" class="active">Población</button>
+                <button class="tab" onclick="sortCCAAGrid('sanidad_pc')" id="sort-sanidad_pc" style="padding:6px 12px;font-size:12px;">Sanidad/hab</button>
+                <button class="tab" onclick="sortCCAAGrid('educacion_pc')" id="sort-educacion_pc" style="padding:6px 12px;font-size:12px;">Educación/hab</button>
+                <button class="tab" onclick="sortCCAAGrid('presupuesto_pc')" id="sort-presupuesto_pc" style="padding:6px 12px;font-size:12px;">Presupuesto/hab</button>
+                <button class="tab" onclick="sortCCAAGrid('entregas_cuenta_pc')" id="sort-entregas_cuenta_pc" style="padding:6px 12px;font-size:12px;">Entregas/hab</button>
+            </div>
+        </div>
+
+        <div class="ccaa-grid" id="ccaa-fichas-grid"></div>
+
+        <div class="card">
+            <h3>Gasto sanitario per cápita por CCAA (€/habitante, 2025)</h3>
+            <canvas id="chart-ccaa-sanidad-pc" style="max-height:520px;"></canvas>
+            <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuente: FADSP, Presupuestos Sanitarios de las CCAA 2025. La línea discontinua marca la media nacional (1.757 €/hab). La brecha entre la comunidad con más gasto (Asturias, 2.436 €) y la de menos (Cataluña, 1.442 €) es del 69%.</p>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-box">
+                <h3>Gasto educativo per cápita por CCAA (€/hab, 2023)</h3>
+                <canvas id="chart-ccaa-edu-pc" style="max-height:520px;"></canvas>
+                <p style="font-size:12px; color:var(--text-secondary); margin-top:6px;">Fuente: Ministerio de Educación, gasto público 2023.</p>
+            </div>
+            <div class="chart-box">
+                <h3>Composición del gasto social por CCAA (%, 2025)</h3>
+                <canvas id="chart-ccaa-social-comp" style="max-height:520px;"></canvas>
+                <p style="font-size:12px; color:var(--text-secondary); margin-top:6px;">Sanidad + Educación + Protección social como % del presupuesto total.</p>
+            </div>
+        </div>
+
+        <p style="font-size:11px; color:var(--text-secondary); margin-top:8px; padding: 0 8px;">Fuentes: Población INE (enero 2025) · Gasto sanitario FADSP (presupuestos iniciales 2025) · Gasto educativo Ministerio de Educación (2023) · Protección social FEDEA/estimaciones (2023) · Presupuestos propios de cada CCAA (portales oficiales, 2025) · Entregas a cuenta Ministerio de Hacienda (nov 2025). Los datos de educación y protección social son estimaciones basadas en la distribución porcentual entre CCAA; las cifras exactas pueden variar respecto a las liquidaciones definitivas.</p>
+
+        <!-- Modal overlay for CCAA detail -->
+        <div class="ccaa-detail-overlay" id="ccaa-overlay" onclick="if(event.target===this)closeCCAADetail()">
+            <div class="ccaa-detail" id="ccaa-detail-content">
+                <button class="close-btn" onclick="closeCCAADetail()">✕</button>
+                <div id="ccaa-detail-body"></div>
+            </div>
         </div>
     </div>
 
@@ -1143,6 +1278,337 @@ new Chart(document.getElementById('chart-transf-ccaa'), {
         scales: {
             x: { stacked: true, grid:{display:false} },
             y: { stacked: true, ticks: { callback: v => fmt(v/1000)+'k' }}
+        }
+    }
+});
+
+// ================================================================
+// CCAA FICHAS — Interactive cards with detail modal
+// ================================================================
+const CCAA_DATA = [
+    {nombre:'Andalucía', poblacion:8637842, regimen:'común', presupuesto_total:48871, sanidad_total:15247, sanidad_pc:1764, educacion_total:10168, educacion_pc:1177, social_total:5950, social_pc:689, entregas:29253, entregas_pc:3387, color:'#c8102e'},
+    {nombre:'Cataluña', poblacion:7921831, regimen:'común', presupuesto_total:45961, sanidad_total:11425, sanidad_pc:1442, educacion_total:7933, educacion_pc:1001, social_total:5600, social_pc:707, entregas:30062, entregas_pc:3795, color:'#1b2a4a'},
+    {nombre:'Madrid', poblacion:6943166, regimen:'común', presupuesto_total:27558, sanidad_total:10460, sanidad_pc:1468, educacion_total:6190, educacion_pc:891, social_total:3850, social_pc:554, entregas:21904, entregas_pc:3154, color:'#f4b400'},
+    {nombre:'C. Valenciana', poblacion:5285792, regimen:'común', presupuesto_total:32291, sanidad_total:9170, sanidad_pc:1595, educacion_total:4808, educacion_pc:910, social_total:3200, social_pc:605, entregas:14885, entregas_pc:2816, color:'#4C72B0'},
+    {nombre:'Galicia', poblacion:2697412, regimen:'común', presupuesto_total:13954, sanidad_total:5458, sanidad_pc:2010, educacion_total:2647, educacion_pc:981, social_total:1800, social_pc:667, entregas:10878, entregas_pc:4033, color:'#55A868'},
+    {nombre:'Castilla y León', poblacion:2374396, regimen:'común', presupuesto_total:11200, sanidad_total:5006, sanidad_pc:2040, educacion_total:2467, educacion_pc:1039, social_total:1600, social_pc:674, entregas:9523, entregas_pc:4012, color:'#DD8452'},
+    {nombre:'Canarias', poblacion:2254475, regimen:'común', presupuesto_total:11678, sanidad_total:4589, sanidad_pc:2036, educacion_total:2164, educacion_pc:960, social_total:1400, social_pc:621, entregas:6800, entregas_pc:3016, color:'#C44E52'},
+    {nombre:'País Vasco', poblacion:2220504, regimen:'foral', presupuesto_total:15728, sanidad_total:5116, sanidad_pc:2305, educacion_total:3614, educacion_pc:1627, social_total:2900, social_pc:1306, entregas:0, entregas_pc:0, color:'#8172B3'},
+    {nombre:'Castilla-La Mancha', poblacion:2129613, regimen:'común', presupuesto_total:12716, sanidad_total:3785, sanidad_pc:1777, educacion_total:2044, educacion_pc:960, social_total:1350, social_pc:634, entregas:7445, entregas_pc:3496, color:'#937860'},
+    {nombre:'Murcia', poblacion:1564982, regimen:'común', presupuesto_total:7200, sanidad_total:2504, sanidad_pc:1580, educacion_total:1503, educacion_pc:960, social_total:950, social_pc:607, entregas:4880, entregas_pc:3118, color:'#64b5f6'},
+    {nombre:'Aragón', poblacion:1348312, regimen:'común', presupuesto_total:7800, sanidad_total:2774, sanidad_pc:2055, educacion_total:1443, educacion_pc:1070, social_total:900, social_pc:667, entregas:5297, entregas_pc:3929, color:'#81c784'},
+    {nombre:'Baleares', poblacion:1248256, regimen:'común', presupuesto_total:6800, sanidad_total:2490, sanidad_pc:1995, educacion_total:1082, educacion_pc:867, social_total:700, social_pc:561, entregas:3152, entregas_pc:2525, color:'#ffb74d'},
+    {nombre:'Extremadura', poblacion:1052775, regimen:'común', presupuesto_total:6600, sanidad_total:2378, sanidad_pc:2259, educacion_total:1082, educacion_pc:1028, social_total:850, social_pc:807, entregas:4461, entregas_pc:4237, color:'#e57373'},
+    {nombre:'Asturias', poblacion:1005276, regimen:'común', presupuesto_total:6091, sanidad_total:2448, sanidad_pc:2436, educacion_total:901, educacion_pc:896, social_total:750, social_pc:746, entregas:3965, entregas_pc:3944, color:'#7986cb'},
+    {nombre:'Navarra', poblacion:682812, regimen:'foral', presupuesto_total:6431, sanidad_total:1510, sanidad_pc:2211, educacion_total:841, educacion_pc:1232, social_total:680, social_pc:996, entregas:0, entregas_pc:0, color:'#4db6ac'},
+    {nombre:'Cantabria', poblacion:588783, regimen:'común', presupuesto_total:3749, sanidad_total:1213, sanidad_pc:2061, educacion_total:541, educacion_pc:919, social_total:400, social_pc:679, entregas:2677, entregas_pc:4546, color:'#a1887f'},
+    {nombre:'La Rioja', poblacion:329782, regimen:'común', presupuesto_total:2084, sanidad_total:634, sanidad_pc:1924, educacion_total:301, educacion_pc:913, social_total:210, social_pc:637, entregas:1440, entregas_pc:4366, color:'#90a4ae'},
+];
+
+// Add computed per-capita fields
+CCAA_DATA.forEach(d => {
+    d.presupuesto_pc = Math.round(d.presupuesto_total * 1e6 / d.poblacion);
+});
+
+// Medias nacionales
+const CCAA_AVG = {
+    sanidad_pc: 1757,
+    educacion_pc: 1030,
+    social_pc: 685,
+    presupuesto_pc: Math.round(CCAA_DATA.reduce((s,d)=>s+d.presupuesto_total,0)*1e6 / CCAA_DATA.reduce((s,d)=>s+d.poblacion,0)),
+    entregas_pc: Math.round(CCAA_DATA.filter(d=>d.regimen==='común').reduce((s,d)=>s+d.entregas,0)*1e6 / CCAA_DATA.filter(d=>d.regimen==='común').reduce((s,d)=>s+d.poblacion,0))
+};
+
+let currentCCAASort = 'poblacion';
+
+function fmtN(n) { return n.toLocaleString('es-ES'); }
+
+function buildMiniBar(val, max, color) {
+    const pct = Math.min(val / max * 100, 100);
+    return `<div class="ccaa-bar-track"><div class="ccaa-bar-fill" style="width:${pct}%;background:${color}"></div></div>`;
+}
+
+function renderCCAAGrid(sortKey) {
+    currentCCAASort = sortKey || currentCCAASort;
+    const sorted = [...CCAA_DATA].sort((a,b) => {
+        const va = sortKey === 'poblacion' ? a.poblacion : a[sortKey];
+        const vb = sortKey === 'poblacion' ? b.poblacion : b[sortKey];
+        return vb - va;
+    });
+    const maxSan = Math.max(...CCAA_DATA.map(d=>d.sanidad_pc));
+    const maxEdu = Math.max(...CCAA_DATA.map(d=>d.educacion_pc));
+    const maxSoc = Math.max(...CCAA_DATA.map(d=>d.social_pc));
+
+    const grid = document.getElementById('ccaa-fichas-grid');
+    grid.innerHTML = sorted.map((d,i) => `
+        <div class="ccaa-mini" style="border-left-color:${d.color}" onclick="openCCAADetail('${d.nombre}')">
+            <div class="ccaa-name">${d.nombre}${d.regimen==='foral'?' <span style="font-size:10px;color:var(--gold);font-weight:400;">foral</span>':''}</div>
+            <div class="ccaa-pop">${fmtN(d.poblacion)} hab · Ppto: ${fmtN(d.presupuesto_total)} M€</div>
+            <div class="ccaa-bars">
+                <div class="ccaa-bar-row">
+                    <span class="ccaa-bar-label">Sanidad</span>
+                    ${buildMiniBar(d.sanidad_pc, maxSan, '#c8102e')}
+                    <span class="ccaa-bar-val">${fmtN(d.sanidad_pc)} €</span>
+                </div>
+                <div class="ccaa-bar-row">
+                    <span class="ccaa-bar-label">Educación</span>
+                    ${buildMiniBar(d.educacion_pc, maxEdu, '#4C72B0')}
+                    <span class="ccaa-bar-val">${fmtN(d.educacion_pc)} €</span>
+                </div>
+                <div class="ccaa-bar-row">
+                    <span class="ccaa-bar-label">Social</span>
+                    ${buildMiniBar(d.social_pc, maxSoc, '#55A868')}
+                    <span class="ccaa-bar-val">${fmtN(d.social_pc)} €</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function sortCCAAGrid(key) {
+    document.querySelectorAll('[id^="sort-"]').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('sort-'+key);
+    if (btn) btn.classList.add('active');
+    renderCCAAGrid(key);
+}
+
+let detailCharts = [];
+
+function openCCAADetail(nombre) {
+    const d = CCAA_DATA.find(c => c.nombre === nombre);
+    if (!d) return;
+
+    // Destroy previous charts
+    detailCharts.forEach(c => c.destroy());
+    detailCharts = [];
+
+    const ppc = Math.round(d.presupuesto_total * 1e6 / d.poblacion);
+    const socialPct = ((d.sanidad_total + d.educacion_total + d.social_total) / d.presupuesto_total * 100).toFixed(1);
+    const entregasInfo = d.regimen === 'foral'
+        ? '<div class="detail-kpi ent"><div class="detail-kpi-label">Régimen</div><div class="detail-kpi-val" style="font-size:16px;">Foral</div><div class="detail-kpi-sub">Recauda sus propios impuestos</div></div>'
+        : `<div class="detail-kpi ent"><div class="detail-kpi-label">Entregas a cta. 2026</div><div class="detail-kpi-val">${fmtN(d.entregas)} M€</div><div class="detail-kpi-sub">${fmtN(d.entregas_pc)} €/hab</div></div>`;
+
+    const body = document.getElementById('ccaa-detail-body');
+    body.innerHTML = `
+        <h2 style="display:flex;align-items:center;gap:10px;"><span style="width:6px;height:28px;background:${d.color};border-radius:3px;display:inline-block;"></span> ${d.nombre}</h2>
+        <div class="detail-sub">${fmtN(d.poblacion)} habitantes · Régimen ${d.regimen} · Presupuesto total: ${fmtN(d.presupuesto_total)} M€ (${fmtN(ppc)} €/hab)</div>
+
+        <div class="detail-kpis">
+            <div class="detail-kpi san"><div class="detail-kpi-label">Sanidad</div><div class="detail-kpi-val">${fmtN(d.sanidad_total)} M€</div><div class="detail-kpi-sub">${fmtN(d.sanidad_pc)} €/hab · ${(d.sanidad_total/d.presupuesto_total*100).toFixed(1)}% ppto</div></div>
+            <div class="detail-kpi edu"><div class="detail-kpi-label">Educación</div><div class="detail-kpi-val">${fmtN(d.educacion_total)} M€</div><div class="detail-kpi-sub">${fmtN(d.educacion_pc)} €/hab · ${(d.educacion_total/d.presupuesto_total*100).toFixed(1)}% ppto</div></div>
+            <div class="detail-kpi soc"><div class="detail-kpi-label">Protección social</div><div class="detail-kpi-val">${fmtN(d.social_total)} M€</div><div class="detail-kpi-sub">${fmtN(d.social_pc)} €/hab · ${(d.social_total/d.presupuesto_total*100).toFixed(1)}% ppto</div></div>
+            ${entregasInfo}
+        </div>
+
+        <div class="ccaa-compare-bar">
+            <h4>Comparación con la media nacional (€/habitante)</h4>
+            ${buildCompareBar('Sanidad', d.sanidad_pc, CCAA_AVG.sanidad_pc, 2500, '#c8102e')}
+            ${buildCompareBar('Educación', d.educacion_pc, CCAA_AVG.educacion_pc, 1700, '#4C72B0')}
+            ${buildCompareBar('P. social', d.social_pc, CCAA_AVG.social_pc, 1400, '#55A868')}
+            ${d.regimen==='común' ? buildCompareBar('Entregas/c', d.entregas_pc, CCAA_AVG.entregas_pc, 5000, '#f4b400') : ''}
+        </div>
+
+        <div class="chart-pair">
+            <div class="chart-wrap">
+                <h4>Distribución del gasto social</h4>
+                <canvas id="chart-detail-doughnut"></canvas>
+            </div>
+            <div class="chart-wrap">
+                <h4>Gasto per cápita vs media</h4>
+                <canvas id="chart-detail-radar"></canvas>
+            </div>
+        </div>
+
+        <div style="background:var(--bg-card);border-radius:8px;padding:16px;margin-top:8px;">
+            <h4 style="font-size:13px;font-weight:600;margin-bottom:8px;">Posición en el ranking por CCAA</h4>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:13px;">
+                ${buildRanking('Sanidad/hab', 'sanidad_pc', d)}
+                ${buildRanking('Educación/hab', 'educacion_pc', d)}
+                ${buildRanking('Social/hab', 'social_pc', d)}
+                ${buildRanking('Ppto total/hab', 'presupuesto_pc', d, true)}
+            </div>
+        </div>
+
+        <p style="font-size:11px;color:var(--text-secondary);margin-top:12px;">Fuentes: Sanidad — FADSP (ptos. iniciales 2025). Educación — Mº Educación (gasto público 2023). Protección social — FEDEA/estimaciones 2023. Población — INE, enero 2025.</p>
+    `;
+
+    // Doughnut chart
+    const restoPpto = d.presupuesto_total - d.sanidad_total - d.educacion_total - d.social_total;
+    const doughnutCtx = document.getElementById('chart-detail-doughnut');
+    detailCharts.push(new Chart(doughnutCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Sanidad', 'Educación', 'Protección social', 'Resto'],
+            datasets: [{
+                data: [d.sanidad_total, d.educacion_total, d.social_total, Math.max(restoPpto,0)],
+                backgroundColor: ['#c8102eCC','#4C72B0CC','#55A868CC','#dee2e6'],
+                borderColor: '#fff', borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false, cutout: '55%',
+            plugins: {
+                legend: { position:'bottom', labels:{usePointStyle:true, padding:8, font:{size:11}} },
+                tooltip: { callbacks: { label: ctx => {
+                    const pct = (ctx.parsed / d.presupuesto_total * 100).toFixed(1);
+                    return `${ctx.label}: ${fmtN(ctx.parsed)} M€ (${pct}%)`;
+                }}}
+            }
+        }
+    }));
+
+    // Radar chart
+    const radarCtx = document.getElementById('chart-detail-radar');
+    detailCharts.push(new Chart(radarCtx, {
+        type: 'radar',
+        data: {
+            labels: ['Sanidad', 'Educación', 'P. Social', 'Ppto/hab'],
+            datasets: [
+                {
+                    label: d.nombre,
+                    data: [d.sanidad_pc/CCAA_AVG.sanidad_pc*100, d.educacion_pc/CCAA_AVG.educacion_pc*100, d.social_pc/CCAA_AVG.social_pc*100, ppc/CCAA_AVG.presupuesto_pc*100],
+                    backgroundColor: d.color + '30', borderColor: d.color, borderWidth: 2, pointRadius: 4
+                },
+                {
+                    label: 'Media nacional',
+                    data: [100, 100, 100, 100],
+                    backgroundColor: 'transparent', borderColor: '#999', borderWidth: 1, borderDash: [4,4], pointRadius: 0
+                }
+            ]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { position:'bottom', labels:{usePointStyle:true, font:{size:11}} },
+                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.r.toFixed(0) + '% de la media' }}
+            },
+            scales: { r: { beginAtZero: true, ticks: { callback: v => v+'%', font:{size:10} }, pointLabels: { font:{size:11} } } }
+        }
+    }));
+
+    document.getElementById('ccaa-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function buildCompareBar(label, val, avg, max, color) {
+    const pctVal = Math.min(val / max * 100, 100);
+    const pctAvg = Math.min(avg / max * 100, 100);
+    const diff = val - avg;
+    const diffTxt = diff >= 0 ? `+${fmtN(diff)}` : fmtN(diff);
+    const diffCol = diff >= 0 ? 'var(--positive)' : 'var(--negative)';
+    return `<div class="ccaa-compare-row">
+        <span class="cmp-label">${label}</span>
+        <div class="cmp-track">
+            <div class="cmp-fill" style="width:${pctVal}%;background:${color}">${val > max*0.15 ? fmtN(val)+'€' : ''}</div>
+            <div class="cmp-avg" style="left:${pctAvg}%;" title="Media: ${fmtN(avg)} €/hab"></div>
+        </div>
+        <span class="cmp-val" style="color:${diffCol}">${diffTxt} €</span>
+    </div>`;
+}
+
+function buildRanking(label, field, d, usePpc) {
+    const key = usePpc ? null : field;
+    let sorted;
+    if (usePpc) {
+        sorted = [...CCAA_DATA].map(c => ({...c, _v: Math.round(c.presupuesto_total*1e6/c.poblacion)})).sort((a,b) => b._v - a._v);
+    } else {
+        sorted = [...CCAA_DATA].sort((a,b) => b[field] - a[field]);
+    }
+    const pos = sorted.findIndex(c => c.nombre === d.nombre) + 1;
+    const emoji = pos <= 3 ? '🟢' : pos <= 10 ? '🟡' : '🔴';
+    return `<span>${emoji} <strong>${label}:</strong> ${pos}º de 17</span>`;
+}
+
+function closeCCAADetail() {
+    document.getElementById('ccaa-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+    detailCharts.forEach(c => c.destroy());
+    detailCharts = [];
+}
+
+// Keyboard close
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCCAADetail(); });
+
+// Render grid on load
+renderCCAAGrid('poblacion');
+
+// ── Chart: Sanidad per cápita ──
+const ccaaSanSort = [...CCAA_DATA].sort((a,b) => b.sanidad_pc - a.sanidad_pc);
+new Chart(document.getElementById('chart-ccaa-sanidad-pc'), {
+    type: 'bar',
+    data: {
+        labels: ccaaSanSort.map(d => d.nombre),
+        datasets: [{
+            data: ccaaSanSort.map(d => d.sanidad_pc),
+            backgroundColor: ccaaSanSort.map(d => d.color + 'BB'),
+            borderRadius: 4
+        }]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+        plugins: {
+            legend: {display:false},
+            tooltip: { ...tooltipConfig, callbacks: { label: ctx => {
+                const d = ccaaSanSort[ctx.dataIndex];
+                const diff = d.sanidad_pc - CCAA_AVG.sanidad_pc;
+                const sign = diff >= 0 ? '+' : '';
+                return [`${fmtN(d.sanidad_pc)} €/hab (${sign}${fmtN(diff)} vs media)`, `Total: ${fmtN(d.sanidad_total)} M€`];
+            }}},
+            annotation: {}
+        },
+        scales: { x: { ticks: { callback: v => fmtN(v)+' €' }} }
+    }
+});
+
+// ── Chart: Educación per cápita ──
+const ccaaEduSort = [...CCAA_DATA].sort((a,b) => b.educacion_pc - a.educacion_pc);
+new Chart(document.getElementById('chart-ccaa-edu-pc'), {
+    type: 'bar',
+    data: {
+        labels: ccaaEduSort.map(d => d.nombre),
+        datasets: [{
+            data: ccaaEduSort.map(d => d.educacion_pc),
+            backgroundColor: ccaaEduSort.map(d => '#4C72B0BB'),
+            borderRadius: 4
+        }]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+        plugins: {
+            legend: {display:false},
+            tooltip: { ...tooltipConfig, callbacks: { label: ctx => {
+                const d = ccaaEduSort[ctx.dataIndex];
+                return [`${fmtN(d.educacion_pc)} €/hab`, `Total: ${fmtN(d.educacion_total)} M€`];
+            }}}
+        },
+        scales: { x: { ticks: { callback: v => fmtN(v)+' €' }} }
+    }
+});
+
+// ── Chart: Composición social (stacked %) ──
+const ccaaCompSort = [...CCAA_DATA].sort((a,b) => {
+    const pa = (a.sanidad_total+a.educacion_total+a.social_total)/a.presupuesto_total;
+    const pb = (b.sanidad_total+b.educacion_total+b.social_total)/b.presupuesto_total;
+    return pb - pa;
+});
+new Chart(document.getElementById('chart-ccaa-social-comp'), {
+    type: 'bar',
+    data: {
+        labels: ccaaCompSort.map(d => d.nombre),
+        datasets: [
+            { label: 'Sanidad', data: ccaaCompSort.map(d => (d.sanidad_total/d.presupuesto_total*100).toFixed(1)), backgroundColor: '#c8102eAA', borderRadius: 2 },
+            { label: 'Educación', data: ccaaCompSort.map(d => (d.educacion_total/d.presupuesto_total*100).toFixed(1)), backgroundColor: '#4C72B0AA', borderRadius: 2 },
+            { label: 'P. Social', data: ccaaCompSort.map(d => (d.social_total/d.presupuesto_total*100).toFixed(1)), backgroundColor: '#55A868AA', borderRadius: 2 },
+        ]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+        plugins: {
+            legend: { position:'top', labels:{usePointStyle:true,padding:10} },
+            tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.parsed.x + '%' }}
+        },
+        scales: {
+            x: { stacked: true, max: 100, ticks: { callback: v => v+'%' }},
+            y: { stacked: true }
         }
     }
 });
