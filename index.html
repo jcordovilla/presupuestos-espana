@@ -254,7 +254,7 @@
     <div class="header">
         <h1>Los Presupuestos de España, explicados</h1>
         <p>Una guía visual para entender de dónde viene y a dónde va el dinero público</p>
-        <div class="flag">Datos: PGE 2023 (prorrogados a 2024 y 2025) + información complementaria | Fuente: Ministerio de Hacienda - SEPG</div>
+        <div class="flag">Datos: PGE 2023 (prorrogados a 2024, 2025 y 2026) + información complementaria | Fuente: Ministerio de Hacienda - SEPG</div>
         <div style="margin-top: 10px; font-size: 13px; opacity: 0.7;"><a href="https://www.linkedin.com/in/josecordovilla/" target="_blank" style="color: inherit; text-decoration: none;">Jose Cordovilla</a> · Ingeniero de Caminos. Experto en infraestructuras</div>
     </div>
 
@@ -277,7 +277,7 @@
             <p>Los Presupuestos Generales del Estado (PGE) son el plan financiero del sector público estatal para un año. Recogen <span class="highlight">cuánto dinero espera recibir el Estado</span> (ingresos) y <span class="highlight">cómo piensa gastarlo</span> (gastos). Son el documento económico más importante del Gobierno y se aprueban como ley en el Parlamento.</p>
             <div class="explain-box warn">
                 <strong>Situación actual (febrero 2026)</strong>
-                <p>España no ha aprobado nuevos PGE desde 2023. Los presupuestos de 2023 se han prorrogado automáticamente para 2024 y 2025. El Gobierno presentó un techo de gasto de 212.026 M€ para los PGE de 2026, que aún están en tramitación. Las cifras aquí mostradas corresponden a los PGE 2023 (vigentes por prórroga).</p>
+                <p>España no ha aprobado nuevos PGE desde 2023. Los presupuestos de 2023 se han prorrogado automáticamente para 2024, 2025 y 2026. El Gobierno ya prepara los PGE de 2027 (BOE, junio 2026). Las cifras aquí mostradas corresponden a los PGE 2023 (vigentes por prórroga).</p>
             </div>
             <div class="explain-box">
                 <strong>¿Qué incluyen los PGE?</strong>
@@ -650,36 +650,40 @@
             <h3>Entregas a cuenta del Estado a las CCAA en 2026 (millones €, régimen común)</h3>
             <canvas id="chart-ccaa-entregas" style="max-height:520px;"></canvas>
             <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuente: Ministerio de Hacienda, noviembre 2025. Total entregas a cuenta régimen común: 157.731 M€ (+7% respecto a 2025). No incluye Ceuta (56 M€) ni Melilla (44 M€). País Vasco y Navarra excluidos por régimen foral.</p>
+            <div class="explain-box tip" style="margin-top:12px;">
+                <strong>Entregas a cuenta 2026 y preparación de los PGE 2027</strong>
+                <p>El Real Decreto-ley que actualizaba las entregas a cuenta para 2026 fue rechazado dos veces en el Congreso antes de ser finalmente convalidado en junio de 2026. El Gobierno ha anunciado que está preparando los PGE 2027, que serían los primeros presupuestos nuevos desde 2023 si se logra la mayoría parlamentaria necesaria.</p>
+            </div>
         </div>
 
         <div class="card">
-            <h3>Presupuestos propios de las CCAA (2025)</h3>
-            <p style="margin-bottom:12px;">Cada CCAA aprueba su propio presupuesto, mucho mayor que las entregas a cuenta porque incluye también ingresos propios, deuda, tasas, etc. Estos son los datos disponibles para 2025:</p>
+            <h3>Presupuestos propios de las CCAA (2026 o último disponible)</h3>
+            <p style="margin-bottom:12px;">Cada CCAA aprueba su propio presupuesto, mucho mayor que las entregas a cuenta porque incluye también ingresos propios, deuda, tasas, etc. En 2026, 8 comunidades no aprobaron presupuestos nuevos y prorrogaron los anteriores.</p>
             <table class="data-table" id="table-ccaa-ptos">
                 <thead>
-                    <tr><th>Comunidad Autónoma</th><th class="num">Presupuesto 2025 (M€)</th><th>Estado</th><th class="num">Entregas a cta. 2026 (M€)</th></tr>
+                    <tr><th>Comunidad Autónoma</th><th class="num">Presupuesto (M€)</th><th>Año / Estado</th><th class="num">Entregas a cta. 2026 (M€)</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Andalucía</td><td class="num">48.871</td><td>Aprobado</td><td class="num">29.253</td></tr>
-                    <tr><td>Cataluña</td><td class="num">~45.961</td><td>Prorrogado</td><td class="num">30.062</td></tr>
-                    <tr><td>C. Valenciana</td><td class="num">~32.291</td><td>Aprobado</td><td class="num">14.885</td></tr>
-                    <tr><td>Madrid</td><td class="num">~27.558</td><td>Aprobado</td><td class="num">21.904</td></tr>
-                    <tr><td>País Vasco</td><td class="num">15.728</td><td>Aprobado</td><td class="num">— (foral)</td></tr>
-                    <tr><td>Galicia</td><td class="num">13.954</td><td>Aprobado</td><td class="num">10.878</td></tr>
-                    <tr><td>Castilla-La Mancha</td><td class="num">12.716</td><td>Aprobado</td><td class="num">7.445</td></tr>
-                    <tr><td>Canarias</td><td class="num">11.678</td><td>Aprobado</td><td class="num">6.800</td></tr>
-                    <tr><td>Castilla y León</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">9.523</td></tr>
-                    <tr><td>Navarra</td><td class="num">6.431</td><td>Aprobado</td><td class="num">— (foral)</td></tr>
-                    <tr><td>Asturias</td><td class="num">6.091</td><td>Aprobado</td><td class="num">3.965</td></tr>
-                    <tr><td>Aragón</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">5.297</td></tr>
-                    <tr><td>Murcia</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">4.880</td></tr>
-                    <tr><td>Extremadura</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">4.461</td></tr>
-                    <tr><td>Cantabria</td><td class="num">3.749</td><td>Aprobado</td><td class="num">2.677</td></tr>
-                    <tr><td>Baleares</td><td class="num">n/d</td><td>Prorrogado</td><td class="num">3.152</td></tr>
-                    <tr><td>La Rioja</td><td class="num">2.084</td><td>Aprobado</td><td class="num">1.440</td></tr>
+                    <tr><td>Andalucía</td><td class="num">51.597</td><td>2026 · Aprobado</td><td class="num">29.253</td></tr>
+                    <tr><td>Cataluña</td><td class="num">~45.961</td><td>2026 · Prorrogado</td><td class="num">30.062</td></tr>
+                    <tr><td>C. Valenciana</td><td class="num">~32.291</td><td>2026 · Prorrogado</td><td class="num">14.885</td></tr>
+                    <tr><td>Madrid</td><td class="num">30.663</td><td>2026 · Aprobado</td><td class="num">21.904</td></tr>
+                    <tr><td>País Vasco</td><td class="num">16.378</td><td>2026 · Aprobado</td><td class="num">— (foral)</td></tr>
+                    <tr><td>Galicia</td><td class="num">13.954</td><td>2025 · Aprobado</td><td class="num">10.878</td></tr>
+                    <tr><td>Castilla-La Mancha</td><td class="num">12.716</td><td>2025 · Aprobado</td><td class="num">7.445</td></tr>
+                    <tr><td>Canarias</td><td class="num">11.678</td><td>2025 · Aprobado</td><td class="num">6.800</td></tr>
+                    <tr><td>Castilla y León</td><td class="num">n/d</td><td>2026 · Prorrogado</td><td class="num">9.523</td></tr>
+                    <tr><td>Navarra</td><td class="num">6.742</td><td>2026 · Aprobado</td><td class="num">— (foral)</td></tr>
+                    <tr><td>Asturias</td><td class="num">6.091</td><td>2025 · Aprobado</td><td class="num">3.965</td></tr>
+                    <tr><td>Aragón</td><td class="num">n/d</td><td>2026 · Prorrogado</td><td class="num">5.297</td></tr>
+                    <tr><td>Murcia</td><td class="num">n/d</td><td>2026 · Prorrogado</td><td class="num">4.880</td></tr>
+                    <tr><td>Extremadura</td><td class="num">n/d</td><td>2026 · Prorrogado</td><td class="num">4.461</td></tr>
+                    <tr><td>Cantabria</td><td class="num">n/d</td><td>2026 · Prorrogado</td><td class="num">2.677</td></tr>
+                    <tr><td>Baleares</td><td class="num">n/d</td><td>2026 · Prorrogado</td><td class="num">3.152</td></tr>
+                    <tr><td>La Rioja</td><td class="num">2.084</td><td>2025 · Aprobado</td><td class="num">1.440</td></tr>
                 </tbody>
             </table>
-            <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuentes: presupuestos propios de cada CCAA (portales oficiales, datos 2025). "n/d" = presupuesto prorrogado sin dato público consolidado. Las entregas a cuenta corresponden a 2026. Los presupuestos propios son siempre superiores a las entregas porque incluyen impuestos propios, tasas, deuda y otros ingresos. "~" indica cifra aproximada de presupuesto prorrogado de ejercicios anteriores.</p>
+            <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuentes: presupuestos propios de cada CCAA (portales oficiales). 9 CCAA aprobaron presupuestos para 2026; 8 prorrogaron los anteriores. "n/d" = presupuesto prorrogado sin dato público consolidado. Las entregas a cuenta corresponden a 2026. "~" indica cifra aproximada de presupuesto prorrogado.</p>
         </div>
 
         <div class="card">
@@ -687,7 +691,7 @@
             <p>¿En qué gasta cada comunidad su presupuesto? Haz clic en cualquier tarjeta para ver el detalle: sanidad, educación, protección social y financiación. Las barras muestran el gasto per cápita comparado con la media nacional.</p>
             <div class="explain-box tip">
                 <strong>¿Por qué varían tanto los datos entre comunidades?</strong>
-                <p>Cada CCAA tiene competencias, demografía e ingresos diferentes. Además, País Vasco y Navarra (régimen foral) recaudan sus propios impuestos, lo que explica que no reciban entregas a cuenta del Estado. Los datos de gasto funcional (sanidad, educación, social) proceden de presupuestos iniciales 2025 y gasto público 2023.</p>
+                <p>Cada CCAA tiene competencias, demografía e ingresos diferentes. Además, País Vasco y Navarra (régimen foral) recaudan sus propios impuestos, lo que explica que no reciban entregas a cuenta del Estado. Los datos de gasto sanitario proceden de presupuestos iniciales 2026 (FADSP); educación y protección social de gasto público 2023.</p>
             </div>
         </div>
 
@@ -705,9 +709,9 @@
         <div class="ccaa-grid" id="ccaa-fichas-grid"></div>
 
         <div class="card">
-            <h3>Gasto sanitario per cápita por CCAA (€/habitante, 2025)</h3>
+            <h3>Gasto sanitario per cápita por CCAA (€/habitante, 2026)</h3>
             <canvas id="chart-ccaa-sanidad-pc" style="max-height:520px;"></canvas>
-            <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuente: FADSP, Presupuestos Sanitarios de las CCAA 2025. La línea discontinua marca la media nacional (1.757 €/hab). La brecha entre la comunidad con más gasto (Asturias, 2.436 €) y la de menos (Cataluña, 1.442 €) es del 69%.</p>
+            <p style="font-size:12px; color:var(--text-secondary); margin-top:8px;">Fuente: FADSP, Presupuestos Sanitarios de las CCAA 2026. La media nacional es 2.014 €/hab. La brecha entre la comunidad con más gasto (Asturias, 2.507 €) y la de menos (Murcia, 1.511 €) es del 66%.</p>
         </div>
 
         <div class="chart-grid">
@@ -723,7 +727,7 @@
             </div>
         </div>
 
-        <p style="font-size:11px; color:var(--text-secondary); margin-top:8px; padding: 0 8px;">Fuentes: Población INE (enero 2025) · Gasto sanitario FADSP (presupuestos iniciales 2025) · Gasto educativo Ministerio de Educación (2023) · Protección social FEDEA/estimaciones (2023) · Presupuestos propios de cada CCAA (portales oficiales, 2025) · Entregas a cuenta Ministerio de Hacienda (nov 2025). Los datos de educación y protección social son estimaciones basadas en la distribución porcentual entre CCAA; las cifras exactas pueden variar respecto a las liquidaciones definitivas.</p>
+        <p style="font-size:11px; color:var(--text-secondary); margin-top:8px; padding: 0 8px;">Fuentes: Población INE (abril 2026) · Gasto sanitario FADSP (presupuestos iniciales 2026) · Gasto educativo Ministerio de Educación (2023) · Protección social FEDEA/estimaciones (2023) · Presupuestos propios de cada CCAA (portales oficiales, 2025-2026) · Entregas a cuenta Ministerio de Hacienda (nov 2025). Los datos de educación y protección social son estimaciones basadas en la distribución porcentual entre CCAA; las cifras exactas pueden variar respecto a las liquidaciones definitivas.</p>
 
         <!-- Modal overlay for CCAA detail -->
         <div class="ccaa-detail-overlay" id="ccaa-overlay" onclick="if(event.target===this)closeCCAADetail()">
@@ -743,18 +747,18 @@
         <div class="kpi-row">
             <div class="kpi-card green">
                 <div class="kpi-label">Crecimiento PIB 2025</div>
-                <div class="kpi-value">+2,9%</div>
-                <div class="kpi-sub">Casi el doble que la media de la eurozona</div>
+                <div class="kpi-value">+2,8%</div>
+                <div class="kpi-sub">Doble que la eurozona (1,4%). INE, dato definitivo</div>
             </div>
             <div class="kpi-card red">
-                <div class="kpi-label">Déficit AAPP 2024</div>
-                <div class="kpi-value">3,2% PIB</div>
-                <div class="kpi-sub">Eurostat, 1ª estimación abril 2025</div>
+                <div class="kpi-label">Déficit AAPP 2025</div>
+                <div class="kpi-value">2,4% PIB</div>
+                <div class="kpi-sub">Eurostat, abril 2026. Menor en 18 años</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-label">Deuda Pública 2024</div>
-                <div class="kpi-value">101,8% PIB</div>
-                <div class="kpi-sub">Eurostat, 1ª estimación abril 2025</div>
+                <div class="kpi-label">Deuda Pública 2025</div>
+                <div class="kpi-value">100,7% PIB</div>
+                <div class="kpi-sub">Eurostat, abril 2026. Menor desde 2019</div>
             </div>
             <div class="kpi-card gold">
                 <div class="kpi-label">Techo gasto 2026</div>
@@ -855,7 +859,7 @@
     </div>
 
     <div class="footer">
-        Datos extraídos de los ficheros oficiales de la SEPG (Ministerio de Hacienda), Enero 2026. Elaboración propia.<br>
+        Datos extraídos de los ficheros oficiales de la SEPG (Ministerio de Hacienda). Última actualización: julio 2026. Elaboración propia.<br>
         Fuentes: <a href="https://www.sepg.pap.hacienda.gob.es" target="_blank">SEPG</a> |
         <a href="https://www.lamoncloa.gob.es/consejodeministros/resumenes/paginas/2025/181125-rueda-de-prensa-ministros.aspx" target="_blank">La Moncloa - Techo de Gasto 2026</a> |
         <a href="https://www.airef.es" target="_blank">AIReF</a> |
@@ -1182,27 +1186,22 @@ new Chart(document.getElementById('chart-evolucion'), {
 new Chart(document.getElementById('chart-déficit'), {
     type: 'bar',
     data: {
-        labels: ['2020','2021','2022','2023','2024','2025 (p)'],
+        labels: ['2020','2021','2022','2023','2024','2025'],
         datasets: [
             {
                 label: 'Déficit (% PIB)',
-                data: [9.9, 6.7, 4.6, 3.5, 3.2, 2.8],
-                backgroundColor: function(ctx) {
-                    return ctx.dataIndex <= 4 ? '#c8102eCC' : '#c8102e88';
-                },
+                data: [9.9, 6.7, 4.6, 3.5, 3.2, 2.4],
+                backgroundColor: '#c8102eCC',
                 borderRadius: 4,
                 yAxisID: 'y'
             },
             {
                 label: 'Deuda (% PIB)',
-                data: [119.3, 115.7, 109.5, 105.1, 101.8, 101.4],
+                data: [119.3, 115.7, 109.5, 105.1, 101.8, 100.7],
                 type: 'line',
                 borderColor: '#1b2a4a',
                 backgroundColor: '#1b2a4a20',
                 borderWidth: 3, pointRadius: 5, pointBackgroundColor: '#1b2a4a',
-                segment: {
-                    borderDash: ctx => ctx.p1DataIndex >= 4 ? [5,5] : []
-                },
                 yAxisID: 'y1'
             }
         ]
@@ -1286,23 +1285,23 @@ new Chart(document.getElementById('chart-transf-ccaa'), {
 // CCAA FICHAS — Interactive cards with detail modal
 // ================================================================
 const CCAA_DATA = [
-    {nombre:'Andalucía', poblacion:8637842, regimen:'común', presupuesto_total:48871, sanidad_total:15247, sanidad_pc:1764, educacion_total:10168, educacion_pc:1177, social_total:5950, social_pc:689, entregas:29253, entregas_pc:3387, color:'#c8102e'},
-    {nombre:'Cataluña', poblacion:7921831, regimen:'común', presupuesto_total:45961, sanidad_total:11425, sanidad_pc:1442, educacion_total:7933, educacion_pc:1001, social_total:5600, social_pc:707, entregas:30062, entregas_pc:3795, color:'#1b2a4a'},
-    {nombre:'Madrid', poblacion:6943166, regimen:'común', presupuesto_total:27558, sanidad_total:10460, sanidad_pc:1468, educacion_total:6190, educacion_pc:891, social_total:3850, social_pc:554, entregas:21904, entregas_pc:3154, color:'#f4b400'},
-    {nombre:'C. Valenciana', poblacion:5285792, regimen:'común', presupuesto_total:32291, sanidad_total:9170, sanidad_pc:1595, educacion_total:4808, educacion_pc:910, social_total:3200, social_pc:605, entregas:14885, entregas_pc:2816, color:'#4C72B0'},
-    {nombre:'Galicia', poblacion:2697412, regimen:'común', presupuesto_total:13954, sanidad_total:5458, sanidad_pc:2010, educacion_total:2647, educacion_pc:981, social_total:1800, social_pc:667, entregas:10878, entregas_pc:4033, color:'#55A868'},
-    {nombre:'Castilla y León', poblacion:2374396, regimen:'común', presupuesto_total:11200, sanidad_total:5006, sanidad_pc:2040, educacion_total:2467, educacion_pc:1039, social_total:1600, social_pc:674, entregas:9523, entregas_pc:4012, color:'#DD8452'},
-    {nombre:'Canarias', poblacion:2254475, regimen:'común', presupuesto_total:11678, sanidad_total:4589, sanidad_pc:2036, educacion_total:2164, educacion_pc:960, social_total:1400, social_pc:621, entregas:6800, entregas_pc:3016, color:'#C44E52'},
-    {nombre:'País Vasco', poblacion:2220504, regimen:'foral', presupuesto_total:15728, sanidad_total:5116, sanidad_pc:2305, educacion_total:3614, educacion_pc:1627, social_total:2900, social_pc:1306, entregas:0, entregas_pc:0, color:'#8172B3'},
-    {nombre:'Castilla-La Mancha', poblacion:2129613, regimen:'común', presupuesto_total:12716, sanidad_total:3785, sanidad_pc:1777, educacion_total:2044, educacion_pc:960, social_total:1350, social_pc:634, entregas:7445, entregas_pc:3496, color:'#937860'},
-    {nombre:'Murcia', poblacion:1564982, regimen:'común', presupuesto_total:7200, sanidad_total:2504, sanidad_pc:1580, educacion_total:1503, educacion_pc:960, social_total:950, social_pc:607, entregas:4880, entregas_pc:3118, color:'#64b5f6'},
-    {nombre:'Aragón', poblacion:1348312, regimen:'común', presupuesto_total:7800, sanidad_total:2774, sanidad_pc:2055, educacion_total:1443, educacion_pc:1070, social_total:900, social_pc:667, entregas:5297, entregas_pc:3929, color:'#81c784'},
-    {nombre:'Baleares', poblacion:1248256, regimen:'común', presupuesto_total:6800, sanidad_total:2490, sanidad_pc:1995, educacion_total:1082, educacion_pc:867, social_total:700, social_pc:561, entregas:3152, entregas_pc:2525, color:'#ffb74d'},
-    {nombre:'Extremadura', poblacion:1052775, regimen:'común', presupuesto_total:6600, sanidad_total:2378, sanidad_pc:2259, educacion_total:1082, educacion_pc:1028, social_total:850, social_pc:807, entregas:4461, entregas_pc:4237, color:'#e57373'},
-    {nombre:'Asturias', poblacion:1005276, regimen:'común', presupuesto_total:6091, sanidad_total:2448, sanidad_pc:2436, educacion_total:901, educacion_pc:896, social_total:750, social_pc:746, entregas:3965, entregas_pc:3944, color:'#7986cb'},
-    {nombre:'Navarra', poblacion:682812, regimen:'foral', presupuesto_total:6431, sanidad_total:1510, sanidad_pc:2211, educacion_total:841, educacion_pc:1232, social_total:680, social_pc:996, entregas:0, entregas_pc:0, color:'#4db6ac'},
-    {nombre:'Cantabria', poblacion:588783, regimen:'común', presupuesto_total:3749, sanidad_total:1213, sanidad_pc:2061, educacion_total:541, educacion_pc:919, social_total:400, social_pc:679, entregas:2677, entregas_pc:4546, color:'#a1887f'},
-    {nombre:'La Rioja', poblacion:329782, regimen:'común', presupuesto_total:2084, sanidad_total:634, sanidad_pc:1924, educacion_total:301, educacion_pc:913, social_total:210, social_pc:637, entregas:1440, entregas_pc:4366, color:'#90a4ae'},
+    {nombre:'Andalucía', poblacion:8758481, regimen:'común', presupuesto_total:51597, sanidad_total:16380, sanidad_pc:1870, educacion_total:10700, educacion_pc:1222, social_total:6300, social_pc:719, entregas:29253, entregas_pc:3340, color:'#c8102e'},
+    {nombre:'Cataluña', poblacion:8212548, regimen:'común', presupuesto_total:45961, sanidad_total:12452, sanidad_pc:1516, educacion_total:8200, educacion_pc:998, social_total:5800, social_pc:706, entregas:30062, entregas_pc:3661, color:'#1b2a4a'},
+    {nombre:'Madrid', poblacion:7192293, regimen:'común', presupuesto_total:30663, sanidad_total:11058, sanidad_pc:1537, educacion_total:6700, educacion_pc:931, social_total:4100, social_pc:570, entregas:21904, entregas_pc:3045, color:'#f4b400'},
+    {nombre:'C. Valenciana', poblacion:5549539, regimen:'común', presupuesto_total:32291, sanidad_total:8804, sanidad_pc:1586, educacion_total:5050, educacion_pc:910, social_total:3350, social_pc:604, entregas:14885, entregas_pc:2682, color:'#4C72B0'},
+    {nombre:'Galicia', poblacion:2730134, regimen:'común', presupuesto_total:13954, sanidad_total:5661, sanidad_pc:2074, educacion_total:2700, educacion_pc:989, social_total:1850, social_pc:678, entregas:10878, entregas_pc:3985, color:'#55A868'},
+    {nombre:'Castilla y León', poblacion:2423399, regimen:'común', presupuesto_total:11200, sanidad_total:5113, sanidad_pc:2110, educacion_total:2520, educacion_pc:1040, social_total:1650, social_pc:681, entregas:9523, entregas_pc:3929, color:'#DD8452'},
+    {nombre:'Canarias', poblacion:2275462, regimen:'común', presupuesto_total:11678, sanidad_total:4745, sanidad_pc:2086, educacion_total:2220, educacion_pc:976, social_total:1450, social_pc:637, entregas:6800, entregas_pc:2989, color:'#C44E52'},
+    {nombre:'País Vasco', poblacion:2254920, regimen:'foral', presupuesto_total:16378, sanidad_total:5350, sanidad_pc:2373, educacion_total:3750, educacion_pc:1663, social_total:3050, social_pc:1352, entregas:0, entregas_pc:0, color:'#8172B3'},
+    {nombre:'Castilla-La Mancha', poblacion:2162571, regimen:'común', presupuesto_total:12716, sanidad_total:3970, sanidad_pc:1836, educacion_total:2100, educacion_pc:971, social_total:1400, social_pc:647, entregas:7445, entregas_pc:3443, color:'#937860'},
+    {nombre:'Murcia', poblacion:1610999, regimen:'común', presupuesto_total:7200, sanidad_total:2434, sanidad_pc:1511, educacion_total:1550, educacion_pc:962, social_total:980, social_pc:608, entregas:4880, entregas_pc:3029, color:'#64b5f6'},
+    {nombre:'Aragón', poblacion:1385220, regimen:'común', presupuesto_total:7800, sanidad_total:3038, sanidad_pc:2193, educacion_total:1490, educacion_pc:1076, social_total:930, social_pc:671, entregas:5297, entregas_pc:3824, color:'#81c784'},
+    {nombre:'Baleares', poblacion:1261594, regimen:'común', presupuesto_total:6800, sanidad_total:2499, sanidad_pc:1981, educacion_total:1100, educacion_pc:872, social_total:720, social_pc:571, entregas:3152, entregas_pc:2498, color:'#ffb74d'},
+    {nombre:'Extremadura', poblacion:1055347, regimen:'común', presupuesto_total:6600, sanidad_total:2415, sanidad_pc:2288, educacion_total:1100, educacion_pc:1042, social_total:870, social_pc:824, entregas:4461, entregas_pc:4228, color:'#e57373'},
+    {nombre:'Asturias', poblacion:1024120, regimen:'común', presupuesto_total:6091, sanidad_total:2567, sanidad_pc:2507, educacion_total:930, educacion_pc:908, social_total:780, social_pc:762, entregas:3965, entregas_pc:3872, color:'#7986cb'},
+    {nombre:'Navarra', poblacion:691190, regimen:'foral', presupuesto_total:6742, sanidad_total:1573, sanidad_pc:2275, educacion_total:870, educacion_pc:1259, social_total:710, social_pc:1027, entregas:0, entregas_pc:0, color:'#4db6ac'},
+    {nombre:'Cantabria', poblacion:598011, regimen:'común', presupuesto_total:3749, sanidad_total:1328, sanidad_pc:2220, educacion_total:560, educacion_pc:936, social_total:420, social_pc:702, entregas:2677, entregas_pc:4477, color:'#a1887f'},
+    {nombre:'La Rioja', poblacion:330457, regimen:'común', presupuesto_total:2084, sanidad_total:657, sanidad_pc:1989, educacion_total:310, educacion_pc:938, social_total:220, social_pc:666, entregas:1440, entregas_pc:4358, color:'#90a4ae'},
 ];
 
 // Add computed per-capita fields
@@ -1312,9 +1311,9 @@ CCAA_DATA.forEach(d => {
 
 // Medias nacionales
 const CCAA_AVG = {
-    sanidad_pc: 1757,
+    sanidad_pc: 2014,
     educacion_pc: 1030,
-    social_pc: 685,
+    social_pc: 695,
     presupuesto_pc: Math.round(CCAA_DATA.reduce((s,d)=>s+d.presupuesto_total,0)*1e6 / CCAA_DATA.reduce((s,d)=>s+d.poblacion,0)),
     entregas_pc: Math.round(CCAA_DATA.filter(d=>d.regimen==='común').reduce((s,d)=>s+d.entregas,0)*1e6 / CCAA_DATA.filter(d=>d.regimen==='común').reduce((s,d)=>s+d.poblacion,0))
 };
@@ -1429,7 +1428,7 @@ function openCCAADetail(nombre) {
             </div>
         </div>
 
-        <p style="font-size:11px;color:var(--text-secondary);margin-top:12px;">Fuentes: Sanidad — FADSP (ptos. iniciales 2025). Educación — Mº Educación (gasto público 2023). Protección social — FEDEA/estimaciones 2023. Población — INE, enero 2025.</p>
+        <p style="font-size:11px;color:var(--text-secondary);margin-top:12px;">Fuentes: Sanidad — FADSP (ptos. iniciales 2026). Educación — Mº Educación (gasto público 2023). Protección social — FEDEA/estimaciones 2023. Población — INE, abril 2026.</p>
     `;
 
     // Doughnut chart
